@@ -2,6 +2,7 @@ from .base import BASE_DIR
 
 STATICFILES_DIRS = [
     BASE_DIR / 'global_static',
+    BASE_DIR / 'barber_shop/static',
 ]
 
 STATIC_URL = 'static/'

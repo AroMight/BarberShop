@@ -1,3 +1,8 @@
+h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
 /* Fundo da navbar */
 .navbar-custom {
     background-color: rgb(13, 18, 30);
@@ -34,13 +39,8 @@
     padding: 230px 0;
 }
 
-.about-container {
+.colored-background {
     background-color: rgb(13, 18, 30);
-}
-
-h2 {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
 }
 
 .service-card {
@@ -50,4 +50,87 @@ h2 {
 
 .service-card:hover {
     transform: scale(1.02);
+}
+
+/* 'OUR TEAM' SECTION */
+
+.team-card {
+    text-align: center;
+}
+
+.team-card img {
+    margin-bottom: 15px;
+    width: auto;
+    height: 300px;
+}
+
+.team-card h5 {
+    color: #F0B35B;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #F0B35B;
+}
+
+/* 'NOSSAS UNIDADES' section */
+
+.unit {
+    margin-bottom: 20px;
+}
+
+.unit img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.unit h5 {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.unit p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* TEEEEEEEESTE */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+footer img {
+    width: 100px;
+    height: auto;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #000;
+    font-size: 20px;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
 }

@@ -1,13 +1,13 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('my.env')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Converta a string para booleano
-DEBUG = os.getenv('DEBUG').lower() in ('true', '1', 't', 'yes', 'y')
+DEBUG = os.environ.get('DEBUG').lower() in ('true', '1', 't', 'yes', 'y')
 
 ALLOWED_HOSTS = ["*"]
 INTERNAL_IPS = [
