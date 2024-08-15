@@ -1,4 +1,7 @@
+from django.views import View
 from django.shortcuts import render
 
-def home(request):
-    return render(request, 'barber_shop/home.html')
+
+class HomeViewSet(View):
+    def get(self, request):
+        return render(request, 'barber_shop/home.html')

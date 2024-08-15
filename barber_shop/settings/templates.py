@@ -1,7 +1,11 @@
+from .base import BASE_DIR
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['barber_shop/templates'],
+        'DIRS': [
+            BASE_DIR / 'global_templates',
+            'barber_shop/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

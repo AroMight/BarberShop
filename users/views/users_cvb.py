@@ -1,11 +1,10 @@
-from django.http import HttpResponse
+from django.views.generic import CreateView
+from ..forms.register_form import RegisterForm
+from ..models import Customer
 
 
-def register(request):
-    return HttpResponse('Register page')
-
-def login(request):
-    return HttpResponse('Login page')
-
-def logout(request):
-    return HttpResponse('Logout page')
+class RegisterView(CreateView):
+    template_name = 'users/pages/register.html'
+    form_class = RegisterForm
+    model = Customer
+    success_url = '/users/login/'
