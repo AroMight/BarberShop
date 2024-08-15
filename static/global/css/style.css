@@ -1,0 +1,29 @@
+/* Estilos personalizados */
+.navbar-custom {
+    background-color: #090909;
+    /* Fundo da barra de navegação */
+}
+
+.navbar-custom .nav-link {
+    color: #fff;
+    /* Cor dos links de navegação */
+    font-size: 16px;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ddd;
+    /* Cor dos links ao passar o mouse */
+}
+
+.navbar-custom .btn-cta {
+    background-color: #F4B05F;
+    /* Cor do botão laranja */
+    color: #000;
+    /* Cor do texto do botão */
+    font-size: 16px;
+}
+
+.navbar-custom .btn-cta:hover {
+    background-color: #e09a42;
+    /* Cor do botão ao passar o mouse */
+}

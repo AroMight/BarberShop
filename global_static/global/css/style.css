@@ -1,0 +1,53 @@
+/* Fundo da navbar */
+.navbar-custom {
+    background-color: rgb(13, 18, 30);
+}
+
+/* Cor dos links de navegação */
+.navbar-custom .nav-link {
+    color: #fff;
+}
+
+/* Cor dos links ao passar o mouse */
+.navbar-custom .nav-link:hover {
+    color: #ddd;
+}
+
+/* Main button */
+.btn-cta {
+    background-color: #F0B35B;
+}
+
+.btn-cta:hover {
+    background-color: #e09a42;
+}
+
+
+/* Hero section */
+.hero {
+    background: linear-gradient(to bottom, rgba(13, 18, 30, 1), rgba(13, 18, 30, 0.5), rgba(13, 18, 30, 1)),
+        url(https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+    text-align: center;
+    padding: 230px 0;
+}
+
+.about-container {
+    background-color: rgb(13, 18, 30);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.service-card {
+    box-shadow: 4px 5px 20px 0px black;
+    transition: all 300ms ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.02);
+}
