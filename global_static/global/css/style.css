@@ -3,21 +3,6 @@ h2 {
     font-size: 2.5rem;
 }
 
-/* Fundo da navbar */
-.navbar-custom {
-    background-color: rgb(13, 18, 30);
-}
-
-/* Cor dos links de navegação */
-.navbar-custom .nav-link {
-    color: #fff;
-}
-
-/* Cor dos links ao passar o mouse */
-.navbar-custom .nav-link:hover {
-    color: #ddd;
-}
-
 /* Main button */
 .btn-cta {
     background-color: #F0B35B;
@@ -25,6 +10,19 @@ h2 {
 
 .btn-cta:hover {
     background-color: #e09a42;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: rgb(13, 18, 30);
+}
+
+.navbar-custom .nav-link {
+    color: #fff;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ddd;
 }
 
 
@@ -102,7 +100,7 @@ h2 {
     color: #666;
 }
 
-/* TEEEEEEEESTE */
+/* footer */
 
 footer {
     padding: 20px;
@@ -133,4 +131,17 @@ footer .social-icons a {
     border-radius: 50%;
     width: 55px;
     height: 55px;
+}
+
+/* FORM */
+
+.image-holder img {
+    height: auto;
+    width: 100%;
+}
+
+/* messages */
+.message-container {
+    top: 20px;
+    margin-bottom: -60px;
 }

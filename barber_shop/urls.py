@@ -5,8 +5,10 @@ from django.conf import settings
 from debug_toolbar.toolbar import debug_toolbar_urls
 from . import views
 
+
+
 urlpatterns = [
-    path('', views.HomeViewSet.as_view()),
+    path('', views.HomeViewSet.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
 ] + debug_toolbar_urls()

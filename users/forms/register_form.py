@@ -1,7 +1,9 @@
 from django import forms
-from ..models import Customer
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from ..models import Customer
+from utils.forms_utils import strong_password
 
 
 class RegisterForm(forms.ModelForm):
@@ -15,21 +17,21 @@ class RegisterForm(forms.ModelForm):
             'Required. 15 characters or fewer. Letters, digits and @/./+/-/_ only.'),
     )
 
-    first_name = forms.CharField(
-        max_length=30,
-        required=False,
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': _('Enter your first name.')}
-        ),
-    )
+    # first_name = forms.CharField(
+    #     max_length=30,
+    #     required=False,
+    #     widget=forms.TextInput(
+    #         attrs={'class': 'form-control', 'placeholder': _('Enter your first name.')}
+    #     ),
+    # )
 
-    last_name = forms.CharField(
-        max_length=30,
-        required=False,
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': _('Enter your last name.')}
-        ),
-    )
+    # last_name = forms.CharField(
+    #     max_length=30,
+    #     required=False,
+    #     widget=forms.TextInput(
+    #         attrs={'class': 'form-control', 'placeholder': _('Enter your last name.')}
+    #     ),
+    # )
 
     email = forms.EmailField(
         widget=forms.EmailInput(
@@ -55,13 +57,26 @@ class RegisterForm(forms.ModelForm):
         help_text=_('Passwords must match.'),
     )
 
+    phone_number = forms.CharField(
+        max_length=11,
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': _('Enter your phone number.')}
+        ),
+    )
+
+    profile_photo = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={'class': 'form-control', 'accept': 'image/*'}
+        ),
+    )
+
     class Meta:
         model = Customer
 
         fields = [
             'username',
-            'first_name',
-            'last_name',
             'email',
             'password',
             'password2',
@@ -84,14 +99,38 @@ class RegisterForm(forms.ModelForm):
                 'password': password_mismatch_error,
                 'password2': password_mismatch_error,
             })
+        
+        return cleaned_data
+
+    def clean_username(self):
+        """Check if email is already registred"""
+        cleaned_data = super().clean()
+        username = cleaned_data.get('username')
+
+        if User.objects.filter(username=username).exists():
+            raise ValidationError(
+                _('username already registred.'), code='username_invalid')
+
+        return username
 
     def clean_email(self):
         """Check if email is already registred"""
         cleaned_data = super().clean()
         email = cleaned_data.get('email')
 
-        if Customer.objects.filter(email=email).exists():
+        if User.objects.filter(email=email).exists():
             raise ValidationError(
                 _('Email already registred.'), code='email_invalid')
 
         return email
+
+    def clean_password(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+
+        if not strong_password(password):
+            raise ValidationError(
+                _("Please, enter a stronger password."), code='password_invalid'
+            )
+        
+        return password

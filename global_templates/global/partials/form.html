@@ -1,14 +1,21 @@
+{% load static %}
 <div class="container">
-    <div class="form-container">
-        <form action="{{form_action}}" class="main-form row" method="POST" enctype="multipart/form-data">
+    <div class="form-container row align-items-center">
+        <h2 class="text-center text-light col-12">
+            Create an account
+        </h2>
+        <div class="image-holder col-4 d-none d-lg-block">
+            <img src="{% static 'users/login-cover.jpg'%}" alt="login-cover">
+        </div>
+        <form class="col-lg-6 col-xg-5" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
-            <div class="">
-                <div class="form-floating mb-3">
+            <div class="mb-2">
+                <div class="form-floating">
                     {{ field }}
                     <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                     {% if field.help_text %}
-                    <div id="{{field.id_for_label}}_helptext" class="help-text form-text">
+                    <div id="{{field.id_for_label}}_helptext" class="text-light form-text">
                         {{ field.help_text }}
                     </div>
                     {% endif %}
@@ -22,7 +29,11 @@
                 </div>
             </div>
             {% endfor %}
-            <button class="btn" type="submit">Submit</button>
+            <div class="form-group">
+                <button id="submitButton" class="btn btn-cta w-100" type="submit">
+                    Send
+                </button>
+            </div>
         </form>
     </div>
 </div>

@@ -1,28 +1,8 @@
-<div class="container">
-    <div class="form-container">
-        <form action="{{form_action}}" class="main-form row" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="">
-                <div class="form-floating mb-3">
-                    {{ field }}
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {% if field.help_text %}
-                    <div id="{{field.id_for_label}}_helptext" class="help-text form-text">
-                        {{ field.help_text }}
-                    </div>
-                    {% endif %}
-                    {% if field.errors %}
-                    {% for error in field.errors %}
-                    <div class="field-error text-danger">
-                        <p>{{ error }}</p>
-                    </div>
-                    {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-            <button class="btn" type="submit">Submit</button>
-        </form>
-    </div>
-</div>
+{% extends "global/base.html" %}
+{% block content %}
+
+<main class="colored-background p-5">
+    {% include "global/partials/form.html" %}
+</main>
+
+{% endblock content %}

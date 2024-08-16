@@ -5,3 +5,4 @@ from .database import *
 from .templates import *
 from .static import *
 from .timezone import *
+from .messages import *
