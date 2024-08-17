@@ -1,7 +1,5 @@
 import os
-from dotenv import load_dotenv
 
-load_dotenv('my.env')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 

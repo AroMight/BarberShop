@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from ..forms.register_form import RegisterForm
 
 
-class RegisterView(SuccessMessageMixin, FormView):
+class RegisterViewSet(SuccessMessageMixin, FormView):
     template_name = 'users/pages/register.html'
     form_class = RegisterForm
     success_url = reverse_lazy('home')

@@ -14,5 +14,5 @@ from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'barber_shop.settings')
 
-load_dotenv('my.env')
+load_dotenv()
 application = get_asgi_application()
