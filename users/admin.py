@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
 from .models import Branch, Customer, Employee
 
 # Register your models here.
@@ -16,6 +18,11 @@ class BranchAdmin(admin.ModelAdmin):
     list_filter = [
         'district',
     ]
+
+
+class CustomerInline(admin.StackedInline):
+    model = Customer
+    can_delete = False
 
 
 class CustomerAdmin(admin.ModelAdmin):
@@ -36,6 +43,11 @@ class CustomerAdmin(admin.ModelAdmin):
     ]
 
 
+class EmployeeInline(admin.StackedInline):
+
+    model = Employee
+    can_delete = False
+    
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = [
         'user',
@@ -61,7 +73,18 @@ class EmployeeAdmin(admin.ModelAdmin):
         'phone_number',
     ]
 
+class UserAdmin(BaseUserAdmin):
+    inlines = [CustomerInline, EmployeeInline]
 
+#Branch model
 admin.site.register(Branch, BranchAdmin)
+
+#Employee model
 admin.site.register(Customer, CustomerAdmin)
+
+#Customer model
 admin.site.register(Employee, EmployeeAdmin)
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
