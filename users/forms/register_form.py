@@ -1,4 +1,3 @@
-from typing import Any
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -18,22 +17,6 @@ class RegisterForm(forms.ModelForm):
         help_text=_(
             'Required. 15 characters or fewer. Letters, digits and @/./+/-/_ only.'),
     )
-
-    # first_name = forms.CharField(
-    #     max_length=30,
-    #     required=False,
-    #     widget=forms.TextInput(
-    #         attrs={'class': 'form-control', 'placeholder': _('Enter your first name.')}
-    #     ),
-    # )
-
-    # last_name = forms.CharField(
-    #     max_length=30,
-    #     required=False,
-    #     widget=forms.TextInput(
-    #         attrs={'class': 'form-control', 'placeholder': _('Enter your last name.')}
-    #     ),
-    # )
 
     email = forms.EmailField(
         widget=forms.EmailInput(
@@ -58,7 +41,6 @@ class RegisterForm(forms.ModelForm):
         min_length=8,
         widget=forms.PasswordInput(
             attrs={'class': 'form-control', 'placeholder': _('Repeat your password.')}),
-        help_text=_('Passwords must match.'),
     )
 
     phone_number = forms.CharField(

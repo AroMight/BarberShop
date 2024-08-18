@@ -3,3 +3,4 @@
 *.env
 .replit
 *.vscode/
+.coverage*

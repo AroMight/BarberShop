@@ -22,5 +22,4 @@ class TestUserRegisterViewSet(TestCase):
 
         self.assertTrue(Customer.objects.filter(
             user__username='johndoe').exists())
-        self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/')
