@@ -59,11 +59,10 @@ class UsersRegisterFormIntegrationTest(TestCase):
             'phone_number': '12345678901',
         }
 
-    def test_error_is_raised_if_passwords_do_not_match(self):
+    def test_form_invalid_if_passwords_do_not_match(self):
         self.form_data['password2'] = 'Testwrongpassword'
         form = RegisterForm(data=self.form_data)
         self.assertFalse(form.is_valid())
-        self.assertIn("password", form.errors)
         self.assertIn("Passwords didn't match.", form.errors['password'])
 
     def test_form_invalid_if_email_already_exists(self):
@@ -73,12 +72,12 @@ class UsersRegisterFormIntegrationTest(TestCase):
         form.save()
 
         # Try to create another user with the same email
-        self.form_data['username', 'phone_number'] = 'anotheruser', '12345678910'
+        self.form_data['username',
+                       'phone_number'] = 'anotheruser', '12345678910'
         form2 = RegisterForm(data=self.form_data)
 
         # Check if form is invalid and if the error message is correct
         self.assertFalse(form2.is_valid())
-        self.assertIn("email", form2.errors)
         self.assertIn("Email already registred.", form2.errors['email'])
 
     def test_form_invalid_if_username_already_exists(self):
@@ -93,12 +92,10 @@ class UsersRegisterFormIntegrationTest(TestCase):
 
         # Check if form is invalid and if the error message is correct
         self.assertFalse(form2.is_valid())
-        self.assertIn("username", form2.errors)
         self.assertIn("username already registred.", form2.errors['username'])
 
-
     def test_form_invalid_if_phone_number_already_exists(self):
-        
+
         # Create the initial user
         form = RegisterForm(data=self.form_data)
         form.save()
@@ -109,5 +106,5 @@ class UsersRegisterFormIntegrationTest(TestCase):
 
         # Check if form is invalid and if the error message is correct
         self.assertFalse(form2.is_valid())
-        self.assertIn("phone_number", form2.errors)
-        self.assertIn("This number is already in use.", form2.errors['phone_number'])
+        self.assertIn("This number is already in use.",
+                      form2.errors['phone_number'])

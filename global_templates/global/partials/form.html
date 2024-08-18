@@ -1,8 +1,8 @@
 {% load static %}
 <div class="container">
     <div class="form-container row align-items-center">
-        <h2 class="text-center text-light col-12">
-            Create an account
+        <h2 class="text-center col-12">
+            {{ title }}
         </h2>
         <div class="image-holder col-4 d-none d-lg-block">
             <img src="{% static 'users/login-cover.jpg'%}" alt="login-cover">
@@ -15,7 +15,7 @@
                     {{ field }}
                     <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                     {% if field.help_text %}
-                    <div id="{{field.id_for_label}}_helptext" class="text-light form-text">
+                    <div id="{{field.id_for_label}}_helptext" class="form-text">
                         {{ field.help_text }}
                     </div>
                     {% endif %}
