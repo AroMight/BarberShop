@@ -9,10 +9,12 @@ class IconCharField(forms.CharField):
         self.icon = icon
         super().__init__(*args, **kwargs)
 
+
 class IconEmailField(forms.EmailField):
     def __init__(self, *args, icon=None, **kwargs):
         self.icon = icon
         super().__init__(*args, **kwargs)
+
 
 class IconUsernameField(UsernameField):
     def __init__(self, *args, icon=None, **kwargs):
