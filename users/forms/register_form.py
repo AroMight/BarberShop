@@ -2,48 +2,55 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-from ..models import Customer
+from forms.icon_fields import IconCharField, IconEmailField
 from utils.forms_utils import strong_password
+from ..models import Customer
 
 
 class RegisterForm(forms.ModelForm):
 
-    username = forms.CharField(
+    username = IconCharField(
+        icon="bi bi-person-fill",
         max_length=15,
         widget=forms.TextInput(
             attrs={'class': 'form-control',
-                   'placeholder': _('Enter your username.')}
+                   'placeholder': _('Enter your username.'),
+                   'autofocus': True}
         ),
-        help_text=_(
-            'Required. 15 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        # help_text=_(
+        #     'Required. 15 characters or fewer. Letters, digits and @/./+/-/_ only.'),
     )
 
-    email = forms.EmailField(
+    email = IconEmailField(
+        icon="bi bi-envelope-fill",
         widget=forms.EmailInput(
             attrs={'class': 'form-control',
                    'placeholder': _('Enter your email.')}
         ),
     )
 
-    password = forms.CharField(
+    password = IconCharField(
+        icon="bi bi-lock-fill",
         min_length=8,
         widget=forms.PasswordInput(
             attrs={'class': 'form-control',
                    'placeholder': _('Enter your password.')}
         ),
-        help_text=_(
-            'Your password must contain at least 8 characters, 1 number and 1 special character.'
-        ),
+        # help_text=_(
+        #     'Your password must contain at least 8 characters, 1 number and 1 special character.'
+        # ),
     )
 
-    password2 = forms.CharField(
+    password2 = IconCharField(
+        icon="bi bi-lock-fill",
         label=_('Confirm Password'),
         min_length=8,
         widget=forms.PasswordInput(
             attrs={'class': 'form-control', 'placeholder': _('Repeat your password.')}),
     )
 
-    phone_number = forms.CharField(
+    phone_number = IconCharField(
+        icon="bi bi-telephone-fill",
         max_length=11,
         required=False,
         widget=forms.TextInput(
@@ -52,12 +59,12 @@ class RegisterForm(forms.ModelForm):
         ),
     )
 
-    profile_photo = forms.ImageField(
-        required=False,
-        widget=forms.FileInput(
-            attrs={'class': 'form-control', 'accept': 'image/*'}
-        ),
-    )
+    # profile_photo = forms.ImageField(
+    #     required=False,
+    #     widget=forms.FileInput(
+    #         attrs={'class': 'form-control', 'accept': 'image/*'}
+    #     ),
+    # )
 
     class Meta:
         model = Customer
@@ -68,7 +75,6 @@ class RegisterForm(forms.ModelForm):
             'password',
             'password2',
             'phone_number',
-            'profile_photo',
         ]
 
     def clean(self):

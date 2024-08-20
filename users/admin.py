@@ -29,7 +29,6 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = [
         'user',
         'phone_number',
-        'profile_photo',
     ]
     search_fields = [
         'phone_number',

@@ -18,8 +18,6 @@ class BaseUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(
         max_length=15, blank=True, null=True)
-    profile_photo = models.ImageField(
-        upload_to='users/covers/users/%Y/%m/%d', null=True, blank=True, default='')
 
     class Meta:
         abstract = True
@@ -41,6 +39,8 @@ class Customer(BaseUser):
 class Employee(BaseUser):
     work_at = models.ForeignKey(Branch, on_delete=models.CASCADE)
     services_done = models.IntegerField(default=0)
+    profile_photo = models.ImageField(
+        upload_to='users/covers/users/%Y/%m/%d', null=True, blank=True, default='')
 
     def __str__(self):
         return str(self.user)

@@ -1,39 +1,48 @@
 {% load static %}
 <div class="container">
-    <div class="form-container row align-items-center">
-        <h2 class="text-center col-12">
-            {{ title }}
-        </h2>
-        <div class="image-holder col-4 d-none d-lg-block">
+    <div
+        class="form-container row colored-background rounded rounded-4 mx-1 mx-sm-0 overflow-hidden justify-content-center">
+        <div class="image-holder col d-none d-lg-block ps-0 ">
             <img src="{% static 'users/login-cover.jpg'%}" alt="login-cover">
         </div>
-        <form class="col-lg-6 col-xg-5" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="mb-2">
-                <div class="form-floating">
-                    {{ field }}
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {% if field.help_text %}
-                    <div id="{{field.id_for_label}}_helptext" class="form-text">
-                        {{ field.help_text }}
+        <div class="col-12 col-lg-6 align-content-center row justify-content-center py-5">
+            <h2 class="text-center text-light col-12">
+                {{ title }}
+            </h2>
+            <form class="col-11 col-sm-8" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="{{field.field.icon}}"></i>
+                        </span>
+                        <div class="form-floating">
+                            {{ field }}
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            <!-- {% if field.help_text %}
+                            <div id="{{field.id_for_label}}_helptext" class="form-text">
+                                {{ field.help_text }}
+                            </div>
+                            {% endif %} -->
+                            {% if field.errors %}
+                            {% for error in field.errors %}
+                            <div class="field-error text-danger">
+                                <p>{{ error }}</p>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
                     </div>
-                    {% endif %}
-                    {% if field.errors %}
-                    {% for error in field.errors %}
-                    <div class="field-error text-danger">
-                        <p>{{ error }}</p>
-                    </div>
-                    {% endfor %}
-                    {% endif %}
                 </div>
-            </div>
-            {% endfor %}
-            <div class="form-group">
-                <button id="submitButton" class="btn btn-cta w-100" type="submit">
-                    Send
-                </button>
-            </div>
-        </form>
+                {% endfor %}
+                <div class="form-group">
+                    <button id="submitButton" class="btn btn-cta w-100" type="submit">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>
