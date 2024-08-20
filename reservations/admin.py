@@ -23,7 +23,16 @@ class ReservationAdmin(admin.ModelAdmin):
         'customer',
         'service',
     ]
-
+    list_editable = [
+        'status',
+    ]
+    list_display_links = [
+        'customer',
+        'service',
+        'date',
+        'time',
+        'created_at',
+    ]
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = [
