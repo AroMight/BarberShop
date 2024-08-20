@@ -12,29 +12,27 @@
             <form class="col-11 col-sm-8" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                <div class="mb-3">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="{{field.field.icon}}"></i>
-                        </span>
-                        <div class="form-floating">
-                            {{ field }}
-                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            <!-- {% if field.help_text %}
+                <div class="input-group mb-2">
+                    <span class="input-group-text">
+                        <i class="{{field.field.icon}}"></i>
+                    </span>
+                    <div class="form-floating">
+                        {{ field }}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        <!-- {% if field.help_text %}
                             <div id="{{field.id_for_label}}_helptext" class="form-text">
                                 {{ field.help_text }}
                             </div>
                             {% endif %} -->
-                            {% if field.errors %}
-                            {% for error in field.errors %}
-                            <div class="field-error text-danger">
-                                <p>{{ error }}</p>
-                            </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
                     </div>
                 </div>
+                {% if field.errors %}
+                {% for error in field.errors %}
+                <div class="field-error text-danger">
+                    <p>{{ error }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
                 {% endfor %}
                 <div class="form-group">
                     <button id="submitButton" class="btn btn-cta w-100" type="submit">

@@ -147,7 +147,6 @@ class RegisterForm(forms.ModelForm):
             Customer.objects.create(
                 user=user,
                 phone_number=self.cleaned_data.get('phone_number'),
-                profile_photo=self.cleaned_data.get('profile_photo'),
             )
         else:
             self.save_m2m = self._save_m2m

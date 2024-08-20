@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 from .models import Branch, Customer, Employee
+from services.admin import JobsInline
 
 # Register your models here.
 
@@ -71,6 +72,7 @@ class EmployeeAdmin(admin.ModelAdmin):
         'user',
         'phone_number',
     ]
+    inlines = [JobsInline]
 
 class UserAdmin(BaseUserAdmin):
     inlines = [CustomerInline, EmployeeInline]

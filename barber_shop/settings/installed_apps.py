@@ -1,5 +1,6 @@
 INSTALLED_APPS = [
     'users',
+    'services',
     'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
