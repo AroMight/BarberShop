@@ -1,15 +1,24 @@
+:root {
+    --color-primary: #F0B35B;
+    --color-primary-hover: #e09a42;
+}
+
 h2 {
     margin-bottom: 20px;
     font-size: 2.5rem;
 }
+.h2-colored {
+    color: var(--color-primary);
+}
 
 /* Main button */
 .btn-cta {
-    background-color: #F0B35B;
+    background-color: var(--color-primary);
 }
 
 .btn-cta:hover {
-    background-color: #e09a42;
+    background-color: var(--color-primary-hover);
+    color: black;
 }
 
 /* Navbar */
@@ -63,7 +72,7 @@ h2 {
 }
 
 .team-card h5 {
-    color: #F0B35B;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -74,7 +83,7 @@ h2 {
 }
 
 .social-icons a:hover {
-    color: #F0B35B;
+    color: var(--color-primary-hover);
 }
 
 /* 'NOSSAS UNIDADES' section */
