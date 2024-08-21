@@ -1,11 +1,10 @@
 import os
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 
 
-# Converta a string para booleano
-DEBUG = os.environ.get('DEBUG').lower() in ('true', '1', 't', 'yes', 'y')
+DEBUG = bool(os.environ.get('DEBUG', False))
 
 ALLOWED_HOSTS = ["*"]
 INTERNAL_IPS = [
