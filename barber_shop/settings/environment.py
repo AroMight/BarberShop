@@ -2,6 +2,7 @@ import os
 
 
 SECRET_KEY = str(os.environ.get('SECRET_KEY'))
+SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 
 
 DEBUG = bool(os.environ.get('DEBUG', False))
