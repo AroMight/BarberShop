@@ -10,7 +10,7 @@ Como foquei mais na parte do backend, algumas questões, principalmente de desig
 
 
 ## Configuração do Projeto!
-## Alteração 2 Alteração
+## Alteração 3 Alteradasso
 Para configurar este projeto em seu ambiente local, siga estas etapas:
 
 1. Clone o repositório para sua máquina local usando `git clone`.
