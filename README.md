@@ -9,7 +9,7 @@ Estou utilizando este projeto para aprofundar meu conhecimento em Django, além 
 Como foquei mais na parte do backend, algumas questões, principalmente de design, não tiveram a atenção necessária, mas pretendo pouco a pouco corrigir os bugs e decisões questionáveis.
 
 
-## Configuração do Projeto
+## Configuração do Projeto!
 Para configurar este projeto em seu ambiente local, siga estas etapas:
 
 1. Clone o repositório para sua máquina local usando `git clone`.
