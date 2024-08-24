@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import Employee, Customer
+from users.models import Employee, Customer, Branch
 
 
 class Service(models.Model):
@@ -20,11 +20,12 @@ class Service(models.Model):
 class Reservation(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
+
     date = models.DateField()
     time = models.TimeField()
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=True, default='')
     # def __str__(self):
     #     return str(self.customer) + ' - ' + str(self.service) + ' - ' + str(self.date) + ' - ' + str(self.time)
 
