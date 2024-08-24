@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views.generic import View
+from .forms import ReservationForm
 
-# Create your views here.
+
+class ReservationFormView(View):
+    pass
