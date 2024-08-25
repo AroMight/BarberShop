@@ -26,9 +26,16 @@
                     <a class="nav-link" href="#">Contacts</a>
                 </li>
             </ul>
+            {% if user.is_authenticated %}
             <div>
-                <a class="btn btn-cta" href="#">Schedule an Appointment</a>
+                <a class="btn btn-cta" href="#">My reservations</a>
             </div>
+            {% else %}
+            <div>
+                <a class="btn btn-cta" href="{% url "users:login" %}">Login</a>
+            </div>
+            {% endif %}
+
         </div>
     </div>
 </nav>

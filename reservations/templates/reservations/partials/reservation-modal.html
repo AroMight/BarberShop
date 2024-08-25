@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div class="modal fade" id="reservationsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content colored-background text-light p-4">
+            <div class="modal-header border-0">
+                <h3 class="modal-title">Schedule an appointment</h3>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{% url "home" %}" class="row gy-3">
+                    {% csrf_token %}
+                    <div>
+                        {% for field in form %}
+                        <div class="form-group">
+                            {{field.label_tag}}
+                            {{field}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-cta mt-4">Schedule an appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
