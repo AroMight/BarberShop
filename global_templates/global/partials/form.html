@@ -17,8 +17,9 @@
                         <i class="{{field.field.icon}}"></i>
                     </span>
                     <div class="form-floating">
-                        {{ field }}
-                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{field}}
+                        {{field.label_tag}}
+
                         <!-- {% if field.help_text %}
                             <div id="{{field.id_for_label}}_helptext" class="form-text">
                                 {{ field.help_text }}

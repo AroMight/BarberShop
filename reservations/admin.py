@@ -39,13 +39,13 @@ class ServiceAdmin(admin.ModelAdmin):
         'name',
         'cover',
         'price',
-        'duration_time',
+        # 'duration_time',
         'status',
         'updated_at',
     ]
     list_editable = [
         'price',
-        'duration_time',
+        # 'duration_time',
         'status',
     ]
     search_fields = [

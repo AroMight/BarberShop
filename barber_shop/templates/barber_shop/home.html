@@ -4,13 +4,14 @@
 
 {% block content %}
 <main>
+
     <!-- Hero section -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="display-4 fw-bold">STYLE IS A REFLECTION OF YOUR ATTITUDE AND PERSONALITY</h1>
             <p class="lead">Opening hours: 09:00 AM to 06:00 PM</p>
-            <button type="button" class="btn btn-cta" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-cta" data-bs-toggle="modal" data-bs-target="#reservationsModal">
                Schedule an appointment
             </button>
         </div>
@@ -42,6 +43,7 @@
     </section>
     </div>
 
+    <!-- Services section -->
     <section class="services-container">
         <div class="container mt-5">
             <div class="text-center mb-4">
@@ -85,6 +87,7 @@
         </div>
     </section>
 
+    <!-- Team section -->
     <section class="colored-background">
         <div class="container">
             <div class="team-title text-center text-light fw-bold">
@@ -131,6 +134,7 @@
         </div>
     </section>
 
+    <!-- Units section -->
     <section class="units-container">
         <div class="container text-center mt-5">
             <h2>Nossas Unidades</h2>
@@ -149,7 +153,7 @@
         </div>
     </section>
 
-    {% include "global/partials/reservation-modal.html" %}
+    {% include "reservations/partials/reservation-modal.html" %}
 </main>
 <hr>
 {% endblock content %}

@@ -10,7 +10,6 @@ urlpatterns = [
     path('', views.HomeViewSet.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('reservations/', include('reservations.urls')),
 ] + debug_toolbar_urls()
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

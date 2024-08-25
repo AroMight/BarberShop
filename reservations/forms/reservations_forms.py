@@ -3,10 +3,10 @@ from ..models import Reservation
 
 
 class ReservationForm(forms.ModelForm):
-    date = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}))
+    date = forms.DateField(label="Choose a date",widget=forms.DateInput(
+        attrs={'class': 'form-control', 'type': 'date'}))
 
     available_times = [
-        ('08:00', '08:00'),
         ('09:00', '09:00'),
         ('10:00', '10:00'),
         ('11:00', '11:00'),
@@ -18,17 +18,28 @@ class ReservationForm(forms.ModelForm):
         ('17:00', '17:00'),
     ]
 
-    time = forms.ChoiceField(label='Selecione um horário',choices=available_times, widget=forms.RadioSelect(attrs={'class': 'row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5'}))
+    time = forms.ChoiceField(label="Choose the hour",choices=available_times, widget=forms.RadioSelect(
+        attrs={'class': 'row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5'}))
 
     class Meta:
         model = Reservation
         fields = [
             'service',
             'date',
-            'time',
             'branch',
+            'time',
         ]
+
         widgets = {
             'service': forms.Select(attrs={'class': 'form-control'}),
             'branch': forms.Select(attrs={'class': 'form-control'}),
         }
+
+        labels = {
+            'service': 'Service',
+            'branch': 'Branch',
+        }
+
+        # list of all configurations such a label, widgets that i can do in class meta
+        # https://docs.djangoproject.com/en/3.2/ref/forms/widgets/
+        # https://docs.djangoproject.com/en/3.2/ref/forms/fields/
