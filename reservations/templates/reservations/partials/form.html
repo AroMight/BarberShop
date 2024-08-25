@@ -11,6 +11,13 @@
                 {{field.label_tag}}
             </div>
         </div>
+        {%if field.errors%}
+            {% for error in field.errors %}
+                <div class="field-error text-danger">
+                    <p>{{ error }}</p>
+                </div>
+            {% endfor %}
+            {% endif %}
         {% endfor %}
     </div>
     <button type="submit" class="btn btn-cta mt-4">{{btn_action}}</button>

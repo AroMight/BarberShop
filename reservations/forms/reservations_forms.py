@@ -50,3 +50,15 @@ class ReservationForm(forms.ModelForm):
             'branch',
             'time',
         ]
+
+    def clean_date(self):
+        date = self.cleaned_data.get('date')
+        if date < date.today():
+            raise forms.ValidationError('The date cannot be in the past.')
+        return date
+
+    def clean_time(self):
+        time = self.cleaned_data.get('time')
+        if time < time.now():
+            raise forms.ValidationError('The time cannot be in the past.')
+        return time

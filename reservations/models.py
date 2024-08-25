@@ -1,5 +1,8 @@
+import datetime
 from django.db import models
+from django.forms import ValidationError
 from users.models import Employee, Customer, Branch
+
 
 
 class Service(models.Model):
@@ -27,8 +30,6 @@ class Reservation(models.Model):
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=True, default='')
-    # def __str__(self):
-    #     return str(self.customer) + ' - ' + str(self.service) + ' - ' + str(self.date) + ' - ' + str(self.time)
 
     class Meta:
         ordering = ['date', 'time']
