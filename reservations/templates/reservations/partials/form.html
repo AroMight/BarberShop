@@ -1,0 +1,17 @@
+<form method="POST" action="{% url "home" %}" class="row gy-3 col-11 col-sm-8">
+    {% csrf_token %}
+    <div>
+        {% for field in form %}
+        <div class="input-group mb-2">
+            <span class="input-group-text">
+                <i class="{{field.field.icon}}"></i>
+            </span>
+            <div class="form-floating">
+                {{field}}
+                {{field.label_tag}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button type="submit" class="btn btn-cta mt-4">Schedule an appointment</button>
+</form>
