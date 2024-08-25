@@ -1,4 +1,4 @@
-<form method="POST" action="{% url "home" %}" class="row gy-3 col-11 col-sm-8">
+
     {% csrf_token %}
     <div>
         {% for field in form %}
@@ -13,5 +13,4 @@
         </div>
         {% endfor %}
     </div>
-    <button type="submit" class="btn btn-cta mt-4">Schedule an appointment</button>
-</form>
+    <button type="submit" class="btn btn-cta mt-4">{{btn_action}}</button>

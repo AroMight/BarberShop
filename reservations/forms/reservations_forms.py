@@ -33,7 +33,7 @@ class ReservationForm(forms.ModelForm):
         label="Choose the hour",
         widget=forms.TimeInput(
             attrs={
-                'class': 'row form-control row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5',
+                'class': 'form-control',
                 'type': 'time',
                 'min': '09:00',
                 'max': '17:00',

@@ -11,14 +11,12 @@
         <div class="container hero-content">
             <h1 class="display-4 fw-bold">STYLE IS A REFLECTION OF YOUR ATTITUDE AND PERSONALITY</h1>
             <p class="lead">Opening hours: 09:00 AM to 06:00 PM</p>
-            <button type="button" class="btn btn-cta" data-bs-toggle="modal" data-bs-target="#reservationsModal">
-               Schedule an appointment
-            </button>
+            {% include "reservations/components/reservation-modal.html" %}
         </div>
     </section>
 
     <!-- About section-->
-    <section class="colored-background">
+    <section class="about-container colored-background">
         <div class="container my-0">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -41,7 +39,6 @@
                 </div>
             </div>
     </section>
-    </div>
 
     <!-- Services section -->
     <section class="services-container">
@@ -88,7 +85,7 @@
     </section>
 
     <!-- Team section -->
-    <section class="colored-background">
+    <section class="team-container colored-background">
         <div class="container">
             <div class="team-title text-center text-light fw-bold">
                 <h2>
@@ -153,7 +150,7 @@
         </div>
     </section>
 
-    {% include "reservations/partials/reservation-modal.html" %}
+
 </main>
 <hr>
 {% endblock content %}

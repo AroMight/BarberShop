@@ -1,3 +1,8 @@
+<!-- Btn Modal-->
+<button type="button" class="btn btn-cta" data-bs-toggle="modal" data-bs-target="#reservationsModal">
+    Schedule an appointment
+ </button>
+
 <!-- Modal -->
 <div class="modal fade" id="reservationsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -6,7 +11,9 @@
                 <h3 class="modal-title">Schedule an appointment</h3>
             </div>
             <div class="modal-body">
+                <form method="POST" action="{% url "home" %}" class="row gy-3">
                 {% include "reservations/partials/form.html" %}
+                </form>
             </div>
         </div>
     </div>

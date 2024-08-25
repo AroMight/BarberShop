@@ -7,9 +7,12 @@
         </div>
         <div class="col-12 col-lg-6 align-content-center row justify-content-center py-5">
             <h2 class="text-center col-12 h2-colored">
+                <!-- Substituir isso por um block content -->
                 {{ title }}
             </h2>
-{% include "reservations/partials/form.html" %}
+            <form method="POST" class="row gy-3 col-11 col-sm-8">
+                {% include "reservations/partials/form.html" %}
+            </form>
         </div>
 
     </div>
