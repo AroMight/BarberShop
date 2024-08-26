@@ -9,5 +9,3 @@ ROOT_URLCONF = 'barber_shop.urls'
 WSGI_APPLICATION = 'barber_shop.wsgi.application'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_REDIRECT_URL = reverse_lazy('home')

@@ -26,6 +26,7 @@ class LoginViewSet(SuccessMessageMixin, LoginView):
     template_name = 'users/pages/users_account.html'
     form_class = LoginForm
     success_message = "Welcome back %(username)s!"
+    next_page = reverse_lazy('home')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
