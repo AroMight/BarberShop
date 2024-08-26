@@ -1,8 +1,9 @@
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 SECRET_KEY = str(os.environ.get('SECRET_KEY'))
-
 
 DEBUG = bool(os.environ.get('DEBUG', False))
 
