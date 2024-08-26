@@ -31,4 +31,5 @@ class LoginViewSet(SuccessMessageMixin, LoginView):
         'title': 'Sign in to BarberShop',
         'btn_action': 'Sign in',
     }
+    redirect_authenticated_user = True
     
