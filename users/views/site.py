@@ -13,13 +13,13 @@ class RegisterViewSet(SuccessMessageMixin, FormView):
     extra_context = {
         'title':'Sign to BarberShop',
         'btn_action':'Sign up',
-        }
+    }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Sign to BarberShop'
-        context['btn_action'] = 'Sign up'
-        return context
+    # def get_context_data(self, **kwargs):
+        # context = super().get_context_data(**kwargs)
+        # context['title'] = 'Sign to BarberShop'
+        # context['btn_action'] = 'Sign up'
+        # return context
 
     def form_valid(self, form):
         form.save()
