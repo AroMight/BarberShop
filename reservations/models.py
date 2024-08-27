@@ -23,6 +23,7 @@ class Service(models.Model):
 class Reservation(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    # adicionar lógica para incluir o barber na view
     barber = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, default='')
 
     date = models.DateField()

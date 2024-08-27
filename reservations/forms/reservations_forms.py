@@ -1,3 +1,4 @@
+import datetime
 from django import forms
 from forms.icon_fields import IconDateField, IconModelChoiceField, IconTimeField
 from ..models import Reservation
@@ -53,12 +54,19 @@ class ReservationForm(forms.ModelForm):
 
     def clean_date(self):
         date = self.cleaned_data.get('date')
-        if date < date.today():
+        if date < datetime.date.today():
             raise forms.ValidationError('The date cannot be in the past.')
         return date
 
     def clean_time(self):
         time = self.cleaned_data.get('time')
-        if time < time.now():
+        date = self.cleaned_data.get('date')
+
+        if date is None:
+            return time
+
+        combined_datetime = datetime.datetime.combine(date, time)
+
+        if combined_datetime < datetime.datetime.now():
             raise forms.ValidationError('The time cannot be in the past.')
         return time

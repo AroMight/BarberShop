@@ -1,37 +1,13 @@
-import datetime
-from django.views import View
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView
 from reservations.forms import ReservationForm
-from users.models import Customer
 
 
-class HomeViewSet(View):
+class HomeView(TemplateView):
 
-    def render_home(self, request, form):
-        return render(
-            request,
-            'barber_shop/home.html',
-            context={
-                'form': form,
-                'btn_action': 'Confirm',
-            }
-        )
+    template_name = 'barber_shop/home.html'
 
-    def get(self, request):
-        form = ReservationForm()
-        return self.render_home(request, form)
-
-    @method_decorator(login_required(login_url='users/login/'))
-    def post(self, request):
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            user = request.user
-            customer = Customer.objects.get(user=user)
-            reservation = form.save(commit=False)
-            reservation.customer = customer
-            reservation.save()
-            form = ReservationForm()
-            return self.render_home(request, form)
-        return self.render_home(request, form)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = ReservationForm()
+        context['btn_action'] = 'Confirm'
+        return context

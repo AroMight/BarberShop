@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import resolve, reverse
-from barber_shop.views import HomeViewSet
+from barber_shop.views import HomeView
 
 
 class HomeUrlTests(TestCase):
@@ -15,7 +15,7 @@ class HomeUrlTests(TestCase):
         response = self.client.get(url)
         view = response.request.get('PATH_INFO')
         resolved_view = resolve(view)
-        self.assertEqual(resolved_view.func.view_class, HomeViewSet)
+        self.assertEqual(resolved_view.func.view_class, HomeView)
 
     def test_barber_shop_home_url_is_correct(self):
         url = reverse('home')

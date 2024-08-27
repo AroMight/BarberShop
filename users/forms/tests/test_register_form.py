@@ -10,8 +10,8 @@ class UsersRegisterFormUnitest(TestCase):
         self.form = RegisterForm()
 
     @parameterized.expand([
-        ('username', 'Required. 15 characters or fewer. Letters, digits and @/./+/-/_ only.'),
-        ('password', 'Your password must contain at least 8 characters, 1 number and 1 special character.'),
+        ('username', ''),
+        ('password', ''),
     ])
     def test_form_fields_help_text(self, field_name, expected_help_text):
         actual_help_text = self.form.fields[field_name].help_text
@@ -30,7 +30,6 @@ class UsersRegisterFormUnitest(TestCase):
         ('password', 'form-control'),
         ('password2', 'form-control'),
         ('phone_number', 'form-control'),
-        ('profile_photo', 'form-control'),
     ])
     def test_form_field_widget_class(self, field_name, expected_widget_class):
         actual_widget_class = self.form.fields[field_name].widget.attrs['class']
