@@ -27,13 +27,6 @@ class HomeViewSet(View):
     def post(self, request):
         form = ReservationForm(request.POST)
         if form.is_valid():
-
-            #tirar isso daqui e colocar no forms
-            if form.cleaned_data['date'] < datetime.date.today():
-                form.add_error('date', 'The date cannot be in the past')
-                #talvez redirect seja melhor
-                return self.render_home(request, form)
-
             user = request.user
             customer = Customer.objects.get(user=user)
             reservation = form.save(commit=False)

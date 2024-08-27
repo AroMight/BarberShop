@@ -10,6 +10,10 @@ class RegisterViewSet(SuccessMessageMixin, FormView):
     form_class = RegisterForm
     success_url = reverse_lazy('users:login')
     success_message = "Account created successfully, please login!"
+    extra_context = {
+        'title':'Sign to BarberShop',
+        'btn_action':'Sign up',
+        }
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
