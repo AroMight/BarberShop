@@ -41,7 +41,7 @@ class LoginView(SuccessMessageMixin, LoginViewDefault):
     }
 
     """
-    If you enable redirect_authenticated_user, other websites will be able to             determine if their visitors are authenticated on your site by requesting redirect URLs to image files on your website. To avoid this “social media fingerprinting” information leakage, host all images and your favicon on a separate domain.
+    If you enable redirect_authenticated_user, other websites will be able to determine if their visitors are authenticated on your site by requesting redirect URLs to image files on your website. To avoid this “social media fingerprinting” information leakage, host all images and your favicon on a separate domain.
 
     Enabling redirect_authenticated_user can also result in a redirect loop when using the permission_required() decorator unless the raise_exception parameter is used.
     """
