@@ -10,7 +10,7 @@ from users.models import Customer
 
 class ReservationView(View):
 
-    def render_home(self, request, form):
+    def render_home(self, request, form=None):
         return render(
             request,
             'barber_shop/home.html',

@@ -6,6 +6,6 @@ class HomeView(TemplateView):
 
     template_name = 'barber_shop/home.html'
     extra_context = {
-        'title': 'Barber Shop',
+        'btn_action': 'Confirm',
         'form': ReservationForm(),
     }
