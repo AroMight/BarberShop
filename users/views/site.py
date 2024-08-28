@@ -12,7 +12,7 @@ class RegisterView(SuccessMessageMixin, FormView):
     success_url = reverse_lazy('users:login')
     success_message = "Account created successfully, please login!"
     extra_context = {
-        'title': 'Sign to BarberShop',
+        'title': 'Login',
         'btn_action': 'Sign up',
     }
 

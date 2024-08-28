@@ -1,5 +1,9 @@
 {% extends "global/base.html" %} {% block content %}
 
-<main class="mt-5">{% include "global/components/account-form.html" %}</main>
+{% block page_title %} Sign in {% endblock page_title %}
+
+<main class="mt-5">
+    {% include "global/components/account-form.html" %}
+</main>
 
 {% endblock content %}
