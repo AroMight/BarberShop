@@ -64,7 +64,8 @@ class TestUserRegisterViewSet(TestCase):
             'password2': 'wrongpassword',
         }
 
-        login_url = reverse('users:login')
+        login_url = reverse('users:register')
         response = self.client.post(login_url, data=data, follow=True)
         content = response.content.decode('utf-8')
         self.assertIn('Please, enter a stronger password.', content)
+        self.assertIn("Passwords didn&#x27;t match.", content)
