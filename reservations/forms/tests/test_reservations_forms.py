@@ -40,7 +40,7 @@ class ReservationFormTest(TestCase):
         actual_icon = self.form.fields[field_name].icon
         self.assertEqual(actual_icon, expected_icon)
 
-    def test_reservation_form_time_field_can_not_be_less_than_9_and_greater_than_17(self):
+    def test_reservation_form_date_field_can_not_be_in_the_past(self):
 
         branch = Branch.objects.create(
             district='Branch 1', address='Address 1')
@@ -57,11 +57,26 @@ class ReservationFormTest(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('date', form.errors)
 
-        data.update(
-            {
-                "date": date.today().isoformat(),
-            }
+    def test_reservation_form_time_field_can_not_be_out_of_range(self):
+
+        branch = Branch.objects.create(
+            district='Branch 1',
+            address='Address 1',
         )
-        form2 = ReservationForm(data=data)
-        self.assertFalse(form2.is_valid())
-        self.assertIn('time', form2.errors)
+
+        service = Service.objects.create(
+            name='Service 1',
+            price=10.0,
+        )
+
+        data = {
+            'service': service,
+            'branch': branch,
+            'time': '07:00',
+            'date': '2024-08-29',
+        }
+
+        form = ReservationForm(data=data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('time', form.errors)
