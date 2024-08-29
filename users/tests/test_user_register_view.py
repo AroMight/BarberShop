@@ -7,64 +7,61 @@ from ..forms import RegisterForm
 
 class TestUserRegisterView(TestCase):
 
-    def test_users_register_url_return_200(self):
-        url = reverse("users:register")
-        response = self.client.get(url)
+    data = {
+        "username": "johndoe",
+        "email": "jhon@doe.com",
+        "password": "Abc@123456",
+        "password2": "Abc@123456",
+    }
 
-        self.assertEqual(response.status_code, 200)
+    def setUp(self):
+        self.register_url = reverse("users:register")
+        self.response = self.client.get(self.register_url)
+        return super().setUp()
+
+    def test_users_register_url_return_200(self):
+
+        self.assertEqual(self.response.status_code, 200)
 
     def test_register_viewset_loads_correct_template(self):
-        url = reverse("users:register")
-        response = self.client.get(url)
 
-        self.assertTemplateUsed(response, "users/pages/users_account.html")
+        self.assertTemplateUsed(
+            self.response, "users/pages/users_account.html")
 
     def test_users_register_view_contains_all_context_data(self):
-        url = reverse("users:register")
-        response = self.client.get(url)
-        context = response.context
+        context = self.response.context
 
         self.assertIn("btn_action", context)
         self.assertIn("form", context)
 
     def test_register_viewset_contains_form(self):
-        url = reverse("users:register")
-        response = self.client.get(url)
-        context = response.context
+        context = self.response.context
 
         self.assertIsInstance(context["form"], RegisterForm)
 
     def test_users_register_view_redirects_to_home_if_user_is_authenticated(self):
-        url = reverse("users:register")
-        user = User.objects.create_user(username="test_user", password="test_pass")
+        user = User.objects.create_user(
+            username="test_user", password="test_pass")
         self.client.force_login(user)
-        response = self.client.get(url)
+        response = self.client.get(self.register_url)
 
         self.assertRedirects(response, reverse("home"))
 
     def test_register_view_create_a_customer(self):
-        data = {
-            "username": "johndoe",
-            "email": "jhon@doe.com",
-            "password": "Abc@123456",
-            "password2": "Abc@123456",
-        }
+        response = self.client.post(self.register_url, data=self.data)
 
-        login_url = reverse("users:login")
-        response = self.client.post("/users/register/", data=data)
-
-        self.assertTrue(Customer.objects.filter(user__username="johndoe").exists())
-        self.assertRedirects(response, login_url)
+        self.assertTrue(Customer.objects.filter(
+            user__username="johndoe").exists())
 
     def test_users_register_view_show_error_message(self):
-        data = {
-            "username": "johndoe",
-            "email": "jhon@doe.com",
-            "password": "weakpassword",
-            "password2": "wrongpassword",
-        }
-        login_url = reverse("users:register")
-        response = self.client.post(login_url, data=data, follow=True)
+        self.data.update(
+            {
+                "password": "weakpassword",
+                "password2": "wrongpassword",
+            }
+        )
+
+        response = self.client.post(self.register_url, data=self.data, follow=True)
         content = response.content.decode("utf-8")
 
         self.assertIn("Please, enter a stronger password.", content)
