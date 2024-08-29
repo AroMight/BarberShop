@@ -1,10 +1,9 @@
 from django.test import TestCase
-from django.urls import reverse
 from parameterized import parameterized
 from users.forms.register_form import RegisterForm
 
 
-class UsersRegisterFormUnitest(TestCase):
+class UsersRegisterFormTest(TestCase):
 
     def setUp(self):
         self.form = RegisterForm()
