@@ -2,8 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-from forms.icon_fields import IconCharField, IconEmailField
-from utils.forms_utils import strong_password
+from utils import IconCharField, IconEmailField
+from utils import strong_password
 from ..models import Customer
 
 

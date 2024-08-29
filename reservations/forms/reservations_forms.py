@@ -1,6 +1,6 @@
 import datetime
 from django import forms
-from forms.icon_fields import IconDateField, IconModelChoiceField, IconTimeField
+from utils import IconDateField, IconModelChoiceField, IconTimeField
 from ..models import Reservation
 from ..models import Service, Branch
 

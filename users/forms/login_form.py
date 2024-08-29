@@ -2,7 +2,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from django import forms
-from forms.icon_fields import IconCharField, IconUsernameField
+from utils import IconCharField, IconUsernameField
 
 
 class LoginForm(AuthenticationForm):
