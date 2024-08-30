@@ -69,11 +69,12 @@ class ReservationFormTest(TestCase):
             price=10.0,
         )
 
+    
         data = {
             'service': service,
             'branch': branch,
             'time': '07:00',
-            'date': '2024-08-29',
+            'date': date.today().isoformat(),
         }
 
         form = ReservationForm(data=data)
