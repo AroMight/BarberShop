@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 import pytest
@@ -8,12 +8,14 @@ from users.forms import LoginForm
 
 class TestUserLoginView(TestCase):
 
-    login_url = reverse_lazy("users:login")
+    def setUp(self) -> None:
+        self.login_url = reverse("users:login")
 
-    data = {
-        "username": "testuser",
-        "password": "Abc@123456",
-    }
+        self.data = {
+            "username": "testuser",
+            "password": "Abc@123456",
+        }
+        return super().setUp()
 
     def test_users_login_url_return_200(self):
         response = self.client.get(self.login_url)
@@ -45,8 +47,7 @@ class TestUserLoginView(TestCase):
     def test_users_login_view_successfully_login_a_user(self):
 
         user = User.objects.create_user(**self.data)
-        response = self.client.post(
-            self.login_url, data=self.data, follow=True)
+        response = self.client.post(self.login_url, data=self.data, follow=True)
         context = response.context
         user_logged = context["user"]
 

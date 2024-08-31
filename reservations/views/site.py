@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -10,17 +10,7 @@ from users.models import Customer
 
 class ReservationView(View):
 
-    def render_home(self, request, form=None):
-        return render(
-            request,
-            'barber_shop/home.html',
-            context={
-                'form': form,
-                'btn_action': 'Confirm'
-            }
-        )
-
-    @method_decorator(login_required(login_url=reverse_lazy('users:login')))
+    @method_decorator(login_required(login_url=reverse_lazy("users:login")))
     def post(self, request):
         form = ReservationForm(request.POST)
 
@@ -31,11 +21,10 @@ class ReservationView(View):
             reservation.customer = customer
             reservation.save()
 
-            messages.success(request, 'Reservation made successfully!')
+            messages.success(request, "Reservation made successfully!")
 
             form = ReservationForm()
-            return self.render_home(request, form)
+            return redirect(reverse_lazy("home"))
 
-        messages.error(
-            request, "There's an error in the form, please check it!")
-        return self.render_home(request, form)
+        messages.error(request, "There's an error in the form, please check it!")
+        return redirect(reverse_lazy("home"))
