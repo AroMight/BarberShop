@@ -2,7 +2,6 @@ from datetime import date, timedelta
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from reservations.views import ReservationView
 from reservations.models import Service, Branch, Customer, Reservation
 
 

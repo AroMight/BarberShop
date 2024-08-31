@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
-import pytest
 from ..views import ReservationView
 
 
