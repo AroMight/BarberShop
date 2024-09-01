@@ -1,4 +1,5 @@
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 from django.contrib.auth.views import LoginView as LoginViewDefault
 from django.shortcuts import redirect
 from django.views.generic import FormView
@@ -39,6 +40,11 @@ class LoginView(SuccessMessageMixin, LoginViewDefault):
         "title": "Sign in to BarberShop",
         "btn_action": "Sign in",
     }
+
+    def form_invalid(self, form):
+        messages.error(self.request, "Invalid username or password")
+        response = super().form_invalid(form)
+        return response
 
     """
     If you enable redirect_authenticated_user, other websites will be
