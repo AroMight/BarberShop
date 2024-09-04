@@ -1,0 +1,88 @@
+{% extends "global/base.html" %}
+
+{% block page_title %}Reservations{% endblock page_title %}
+
+{% block content %}
+
+<div class="container mt-4">
+    {% if reservations %}
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr class="text-center">
+                    <th>Barber</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                    <th>When</th>
+                    <th>Where</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td class="d-flex align-items-center">
+                        <img src={{ reservation.barber.profile_photo.url }}
+                            class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
+                        <a href="#">{{ reservation.barber }}</a>
+                    </td>
+                    <td>
+                        {{ reservation.service }}
+                    </td>
+                    <td class="text-center">
+                        {% if reservation.status == True %}
+                        <span class="badge text-bg-success">
+                            Confirmed
+                        </span>
+                        {% elif reservation.status == False %}
+                        <span class="badge text-bg-danger">
+                            Cancelled
+                        </span>
+                        {% else %}
+                        <span class="badge text-bg-secondary">
+                            Pending
+                        </span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ reservation.date|date:"d/m/Y" }} at {{ reservation.time|date:"H:i" }}
+                    </td>
+                    <td>
+                        {{ reservation.branch }}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h1> You do not have any reservations!</h1>
+    {% endif %}
+
+    <!-- Pagination -->
+    <nav>
+        <ul class="pagination justify-content-end">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock content %}

@@ -26,7 +26,7 @@ class Reservation(models.Model):
 
     date = models.DateField()
     time = models.TimeField()
-    status = models.BooleanField(default=True)
+    status = models.BooleanField(default=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=True, default='')
 

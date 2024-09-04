@@ -28,7 +28,7 @@
             </ul>
             {% if user.is_authenticated %}
             <div>
-                <a class="btn btn-cta" href="#">My reservations</a>
+                <a class="btn btn-cta" href={% url "users:reservations" %}>My reservations</a>
             </div>
             {% else %}
             <div>

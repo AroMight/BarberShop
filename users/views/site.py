@@ -1,9 +1,11 @@
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from django.contrib.auth.views import LoginView as LoginViewDefault
 from django.shortcuts import redirect
-from django.views.generic import FormView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView as LoginViewDefault
+from django.views.generic import FormView, ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from reservations.models import Reservation
 from ..forms import RegisterForm, LoginForm
 
 
@@ -45,6 +47,19 @@ class LoginView(SuccessMessageMixin, LoginViewDefault):
         messages.error(self.request, "Invalid username or password")
         response = super().form_invalid(form)
         return response
+
+
+class UserReservationsView(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy("users:login")
+    model = Reservation
+    template_name = "users/pages/users_reservations.html"
+    context_object_name = "reservations"
+    # paginate_by = 10
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(customer=self.request.user.customer)
+        return qs
 
     """
     If you enable redirect_authenticated_user, other websites will be
