@@ -155,3 +155,23 @@ footer .social-icons a {
     top: 20px;
     margin-bottom: -60px;
 }
+
+/* Pagination */
+/* Estilo para o link de paginação */
+.pagination .page-link {
+    color: var(--color-primary); /* Cor dos links normais */
+    background-color: rgb(13, 18, 30); /* Fundo dos links */
+}
+
+/* Estilo para o link quando o mouse está sobre ele */
+.pagination .page-link:hover {
+    color: #fff; /* Cor dos links ao passar o mouse */
+    background-color: var(--color-primary-hover); /* Fundo ao passar o mouse */
+}
+
+/* Estilo para o item ativo da paginação */
+.pagination .page-item.active .page-link {
+    color: #fff; /* Cor do texto do item ativo */
+    background-color: var(--color-primary); /* Fundo do item ativo */
+    border-color: var(--color-primary); /* Cor da borda do item ativo */
+}

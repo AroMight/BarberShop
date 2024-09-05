@@ -53,12 +53,12 @@ class UserReservationsView(LoginRequiredMixin, ListView):
     login_url = reverse_lazy("users:login")
     model = Reservation
     template_name = "users/pages/users_reservations.html"
+    paginate_by = 3
     context_object_name = "reservations"
-    # paginate_by = 10
 
     def get_queryset(self):
         qs = super().get_queryset()
-        qs = qs.filter(customer=self.request.user.customer)
+        qs = qs.filter(customer=self.request.user.customer).order_by("-date")
         return qs
 
     """
