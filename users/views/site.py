@@ -2,9 +2,11 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView as LoginViewDefault
+from django.views import View
 from django.views.generic import FormView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 from reservations.models import Reservation
 from ..forms import RegisterForm, LoginForm
 
@@ -61,7 +63,20 @@ class UserReservationsView(LoginRequiredMixin, ListView):
         qs = qs.filter(customer=self.request.user.customer).order_by("-date")
         return qs
 
-    """
+
+class UserDeleteView(LoginRequiredMixin, View):
+
+    def post(self, request, *args, **kwargs):
+        reservation = Reservation.objects.get(pk=kwargs["id"])
+        if reservation.customer == request.user.customer:
+            reservation.delete()
+            messages.success(request, "Reservation deleted successfully")
+        else:
+            messages.error(request, "You cannot delete this reservation")
+        return redirect("users:reservations")
+
+
+"""
     If you enable redirect_authenticated_user, other websites will be
     able to determine if their visitors are authenticated on your 
     site by requesting redirect URLs to image files on your website.

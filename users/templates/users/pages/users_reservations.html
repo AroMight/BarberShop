@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 {% for reservation in reservations %}
-                <tr>
+                <tr class="text-center">
                     <td class="d-flex align-items-center">
                         <img src={{ reservation.barber.profile_photo.url }}
                             class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
@@ -29,7 +29,7 @@
                     <td>
                         {{ reservation.service }}
                     </td>
-                    <td class="text-center">
+                    <td>
                         {% if reservation.status == True %}
                         <span class="badge text-bg-success">
                             Confirmed
@@ -51,9 +51,13 @@
                         {{ reservation.branch }}
                     </td>
                     <td>
-                        <button class="btn btn-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
+                        <form action="{% url 'users:reservations_delete' reservation.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
