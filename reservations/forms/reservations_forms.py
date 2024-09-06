@@ -9,7 +9,7 @@ class ReservationForm(forms.ModelForm):
 
     service = IconModelChoiceField(
         icon="bi bi-bag-fill",
-        queryset=Service.objects.all(),
+        queryset=Service.objects.filter(status=True),
         label="Choose a service",
         widget=forms.Select(attrs={"class": "form-control"}),
     )

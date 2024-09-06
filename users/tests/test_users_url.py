@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
-from ..views import RegisterView, LoginView, UserReservationsView
+from ..views import RegisterView, LoginView, UserReservationsView, UserDeleteView
 
 
 class TestUsersUrls(TestCase):
@@ -28,6 +28,11 @@ class TestUsersUrls(TestCase):
         response = resolve(url)
         self.assertEqual(response.func.view_class, UserReservationsView)
 
-    def test_users_reservations_url_namespace(self):
-        url = reverse("users:reservations")
-        self.assertEqual(url, "/users/reservations/")
+    def test_users_reservations_delete_url_namespace(self):
+        url = reverse("users:reservations_delete", args=[1])
+        self.assertEqual(url, "/users/reservations/1/")
+
+    def test_users_reservation_delete_url_loads_correct_view(self):
+        url = reverse("users:reservations_delete", args=[1])
+        response = resolve(url)
+        self.assertEqual(response.func.view_class, UserDeleteView)

@@ -51,38 +51,7 @@
                     In
                     viverra accumsan sagittis tempus duis a. Sagittis mollis a eu urna eget id.</p>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card service-card mb-5">
-                        <img src="{% static '/barber_shop/assets/services-img1.png' %}" class="card-img-top"
-                            alt="Corte de cabelo">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h5 class="card-title mb-0">Corte de cabelo</h5>
-                            <a class="btn btn-dark stretched-link" href="">R$55,90</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card mb-5">
-                        <img src="{% static '/barber_shop/assets/services-img2.png' %}" class="card-img-top"
-                            alt="Corte completo">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h5 class="card-title mb-0">Corte completo</h5>
-                            <button class="btn btn-dark stretched-link">R$55,90</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card mb-5">
-                        <img src="{% static '/barber_shop/assets/services-img3.png' %}" class="card-img-top"
-                            alt="Corte & Barba">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <h5 class="card-title mb-0">Corte & Barba</h5>
-                            <button class="btn btn-dark stretched-link">R$55,90</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "global/partials/services-cards.html" %}
         </div>
     </section>
 
@@ -94,42 +63,7 @@
                     Our Team
                 </h2>
             </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="team-card">
-                        <img src="{% static '/barber_shop/profile_covers/profile1.png' %}" alt="Lucas Silva">
-                        <h5 class="fs-4">Lucas Silva</h5>
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-card">
-                        <img src="{% static '/barber_shop/profile_covers/profile2.png' %}" alt="Henrique Souza">
-                        <h5 class="fs-4">Henrique Souza</h5>
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-card">
-                        <img src="{% static '/barber_shop/profile_covers/profile3.png' %}" alt="Tiago Mendes">
-                        <h5 class="fs-4">Tiago Mendes</h5>
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {% include "global/partials/employees-cards.html" %}
         </div>
     </section>
 
@@ -137,18 +71,7 @@
     <section class="units-container">
         <div class="container text-center mt-5">
             <h2>Nossas Unidades</h2>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-5 unit">
-                    <h5>Rua Aguiar, n 120</h5>
-                    <p>Campo Grande - MS</p>
-                    <img src="{% static '/barber_shop/units_covers/filial1.png' %}" alt="Unidade 1">
-                </div>
-                <div class="col-md-5 unit">
-                    <h5>Rua Centro, n 10</h5>
-                    <p>Campo Grande - MS</p>
-                    <img src="{% static '/barber_shop/units_covers/filial2.png' %}" alt="Unidade 2">
-                </div>
-            </div>
+        {% include "global/partials/unit-card.html" %}
         </div>
     </section>
 

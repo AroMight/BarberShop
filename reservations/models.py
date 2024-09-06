@@ -11,6 +11,7 @@ class Service(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     # duration_time = models.DurationField()
     status = models.BooleanField(default=False)
+    is_highlighted = models.BooleanField(default=False)
     barbers = models.ManyToManyField(Employee, related_name='services', blank=True)
     updated_at = models.DateTimeField(auto_now=True)
 

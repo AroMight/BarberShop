@@ -42,11 +42,13 @@ class ServiceAdmin(admin.ModelAdmin):
         # 'duration_time',
         'status',
         'updated_at',
+        'is_highlighted',
     ]
     list_editable = [
         'price',
         # 'duration_time',
         'status',
+        'is_highlighted',
     ]
     search_fields = [
         'name',
