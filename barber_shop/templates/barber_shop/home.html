@@ -8,18 +8,18 @@
 <main>
 
     <!-- Hero section -->
-    <section class="hero">
+    <div class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="display-4 fw-bold">STYLE IS A REFLECTION OF YOUR ATTITUDE AND PERSONALITY</h1>
             <p class="lead">Opening hours: 09:00 AM to 06:00 PM</p>
             {% include "reservations/components/reservation-modal.html" %}
         </div>
-    </section>
+    </div>
 
     <!-- About section-->
-    <section class="about-container colored-background">
-        <div class="container my-0">
+    <div class="about-container colored-background" id="about">
+        <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <img src={% static 'barber_shop/assets/image-design.png' %} class="img-fluid rounded"
@@ -40,11 +40,12 @@
                     <p class="text-light fs-5 fw-bold">Opening hours: 09:00 AM to 06:00 PM</p>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 
     <!-- Services section -->
-    <section class="services-container">
-        <div class="container mt-5">
+    <div class="services-container" id="services">
+        <div class="container py-5">
             <div class="text-center mb-4">
                 <h2 class="fw-bold">Serviços</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Etiam mus vitae lectus proin pellentesque mattis iaculis.
@@ -53,11 +54,11 @@
             </div>
             {% include "global/partials/services-cards.html" %}
         </div>
-    </section>
+    </div>
 
     <!-- Team section -->
-    <section class="team-container colored-background">
-        <div class="container">
+    <div class="team-container colored-background" id="team">
+        <div class="container py-5">
             <div class="team-title text-center text-light fw-bold">
                 <h2>
                     Our Team
@@ -65,15 +66,15 @@
             </div>
         {% include "global/partials/employees-cards.html" %}
         </div>
-    </section>
+    </div>
 
     <!-- Units section -->
-    <section class="units-container">
-        <div class="container text-center mt-5">
+    <div class="units-container" id="units">
+        <div class="container text-center py-5">
             <h2>Nossas Unidades</h2>
         {% include "global/partials/unit-card.html" %}
         </div>
-    </section>
+    </div>
 
 
 </main>

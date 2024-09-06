@@ -17,13 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacts</a>
+                    <a class="nav-link" href="#team">Our team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#units">Units</a>
                 </li>
             </ul>
             {% if user.is_authenticated %}
@@ -32,7 +35,7 @@
             </div>
             {% else %}
             <div>
-                <a class="btn btn-cta" href="{% url "users:login" %}">Login</a>
+                <a class="btn btn-cta" href="{% url " users:login" %}">Login</a>
             </div>
             {% endif %}
 
