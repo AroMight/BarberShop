@@ -1,7 +1,7 @@
 INSTALLED_APPS = [
+    'debug_toolbar',
     'users',
     'reservations',
-    'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

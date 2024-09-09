@@ -60,7 +60,7 @@ class UserReservationsView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        qs = qs.filter(customer=self.request.user.customer).order_by("-date")
+        qs = qs.filter(customer=self.request.user.customer).order_by("-date").select_related("barber", "service")
         return qs
 
 

@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
 from django import forms
+from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 from utils import IconDateField, IconModelChoiceField, IconTimeField
 from ..models import Reservation
 from ..models import Service, Branch
@@ -14,6 +16,13 @@ class ReservationForm(forms.ModelForm):
         widget=forms.Select(attrs={"class": "form-control"}),
     )
 
+    branch = IconModelChoiceField(
+        icon="bi bi-shop-window",
+        queryset=Branch.objects.all(),
+        label="Choose a branch",
+        widget=forms.Select(attrs={"class": "form-control"}),
+    )
+
     date = IconDateField(
         icon="bi bi-calendar-check-fill",
         label="Choose a date",
@@ -25,13 +34,6 @@ class ReservationForm(forms.ModelForm):
                 "max": (datetime.now() + timedelta(days=30)).strftime("%Y-%m-%d"),
             }
         ),
-    )
-
-    branch = IconModelChoiceField(
-        icon="bi bi-shop-window",
-        queryset=Branch.objects.all(),
-        label="Choose a branch",
-        widget=forms.Select(attrs={"class": "form-control"}),
     )
 
     time = IconTimeField(
@@ -52,8 +54,8 @@ class ReservationForm(forms.ModelForm):
         model = Reservation
         fields = [
             "service",
-            "date",
             "branch",
+            "date",
             "time",
         ]
 
@@ -62,23 +64,35 @@ class ReservationForm(forms.ModelForm):
         date = cleaned_data.get("date")
         time = cleaned_data.get("time")
 
-        if time:
+        if date and time:
 
             combined_datetime = datetime.combine(date, time)
 
             if combined_datetime < datetime.now():
-                raise forms.ValidationError(
+
+                date_in_the_past_error = ValidationError(
+                    _("The date and time cannot be in the past."),
+                    code="date_in_the_past",
+                )
+
+                raise ValidationError(
                     {
-                        "date": "The date and time cannot be in the past.",
-                        "time": "The date and time cannot be in the past.",
+                        "date": date_in_the_past_error,
+                        "time": date_in_the_past_error,
                     }
                 )
 
             if combined_datetime > datetime.now() + timedelta(days=30):
-                raise forms.ValidationError(
+
+                date_in_the_future_error = ValidationError(
+                    _("The date and time cannot be more than 30 days in the future."),
+                    code="date_in_the_future",
+                )
+
+                raise ValidationError(
                     {
-                        "date": "The date and time cannot be more than 30 days in the future.",
-                        "time": "The date and time cannot be more than 30 days in the future.",
+                        "date": date_in_the_future_error,
+                        "time": date_in_the_future_error,
                     }
                 )
 
@@ -91,5 +105,7 @@ class ReservationForm(forms.ModelForm):
             time < datetime.strptime("09:00", "%H:%M").time()
             or time > datetime.strptime("17:00", "%H:%M").time()
         ):
-            raise forms.ValidationError("The time must be between 09:00 and 17:00.")
+            raise ValidationError(
+                _("The time must be between 09:00 and 17:00."), code="time_invalid"
+            )
         return time

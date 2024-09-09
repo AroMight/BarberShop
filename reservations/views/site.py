@@ -1,8 +1,8 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from reservations.forms import ReservationForm
 from users.models import Customer
@@ -27,4 +27,11 @@ class ReservationView(View):
             return redirect(reverse_lazy("home"))
 
         messages.error(request, "There's an error in the form, please check it!")
-        return redirect(reverse_lazy("home"))
+        return render(
+            request,
+            "barber_shop/home.html",
+            {
+                "form": form,
+                "btn_action": "Make reservation",
+            },
+        )

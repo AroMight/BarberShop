@@ -6,3 +6,4 @@ from .templates import *
 from .static import *
 from .timezone import *
 from .messages import *
+from .environment import *

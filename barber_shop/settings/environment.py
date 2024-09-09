@@ -1,13 +1,15 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 
 DEBUG = bool(os.environ.get('DEBUG', False))
 
 ALLOWED_HOSTS = ["*"]
+
+# Django DEBUG Toolbar
 INTERNAL_IPS = [
-    "127.0.0.1",
+    '127.0.0.1',
 ]
