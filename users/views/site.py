@@ -1,12 +1,12 @@
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.views import LoginView as LoginViewDefault
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 from django.views import View
 from django.views.generic import FormView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic.edit import DeleteView
 from reservations.models import Reservation
 from ..forms import RegisterForm, LoginForm
 
@@ -32,7 +32,7 @@ class RegisterView(SuccessMessageMixin, FormView):
         return super().form_valid(form)
 
 
-class LoginView(SuccessMessageMixin, LoginViewDefault):
+class UserLoginView(SuccessMessageMixin, LoginView):
 
     template_name = "users/pages/users_account.html"
     form_class = LoginForm
@@ -50,6 +50,9 @@ class LoginView(SuccessMessageMixin, LoginViewDefault):
         response = super().form_invalid(form)
         return response
 
+
+class UserLogoutView(LogoutView):
+    next_page = reverse_lazy("home")
 
 class UserReservationsView(LoginRequiredMixin, ListView):
     login_url = reverse_lazy("users:login")

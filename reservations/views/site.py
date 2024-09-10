@@ -2,10 +2,11 @@ from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.contrib import messages
 from reservations.forms import ReservationForm
 from users.models import Customer
+from utils import get_available_employee
 
 
 class ReservationView(View):
@@ -17,8 +18,11 @@ class ReservationView(View):
         if form.is_valid():
             user = request.user
             customer = Customer.objects.get(user=user)
+            barber = get_available_employee(form)
+
             reservation = form.save(commit=False)
             reservation.customer = customer
+            reservation.barber = barber
             reservation.save()
 
             messages.success(request, "Reservation made successfully!")

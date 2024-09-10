@@ -32,6 +32,13 @@
             {% if user.is_authenticated %}
             <div>
                 <a class="btn btn-cta" href={% url "users:reservations" %}>My reservations</a>
+                <form action={% url "users:logout" %} method="POST" class="d-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="user" value={{ user }}>
+                    <button type="submit" class="text-light bg-transparent border-0">
+                        Logout
+                    </button>
+                </form>
             </div>
             {% else %}
             <div>

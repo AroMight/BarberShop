@@ -7,8 +7,8 @@ from users.models import Branch, Employee
 class HomeView(TemplateView):
 
     services = Service.objects.filter(status=True, is_highlighted=True).only("name", "price", "cover")
-    employees = Employee.objects.all().only("user__username", "profile_photo")
-    units = Branch.objects.all().only("district", "address", "photo")
+    employees = Employee.objects.only("user__username", "profile_photo")
+    units = Branch.objects.only("district", "address", "photo")
 
     template_name = "barber_shop/home.html"
     extra_context = {

@@ -20,14 +20,13 @@ class Service(models.Model):
 
 
 class Reservation(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    # adicionar lógica para incluir o barber na view
-    barber = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, default='')
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='reservations')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='reservations')
+    barber = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, blank=True, related_name='reservations')
 
     date = models.DateField()
     time = models.TimeField()
-    status = models.BooleanField(default=True, null=True)
+    status = models.BooleanField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=True, default='')
 
