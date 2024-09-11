@@ -30,9 +30,10 @@
                 </li>
             </ul>
             {% if user.is_authenticated %}
-            <div>
-                <a class="btn btn-cta" href={% url "users:reservations" %}>My reservations</a>
-                <form action={% url "users:logout" %} method="POST" class="d-inline">
+            <div class="row align-items-center">
+                <a class="btn btn-cta col-6 col-lg-8 ms-3 ms-md-0" href={% url "users:reservations" %}>My
+                    reservations</a>
+                <form action={% url "users:logout" %} method="POST" class="col-12 col-lg-4">
                     {% csrf_token %}
                     <input type="hidden" name="user" value={{ user }}>
                     <button type="submit" class="text-warning bg-transparent border-0">
@@ -43,7 +44,7 @@
             {% else %}
             <div>
                 <a class="btn btn-cta" href="{% url "users:login" %}">Login</a>
-                <button  class="bg-transparent border-0">
+                <button class="bg-transparent border-0">
                     <a href={% url "users:register" %} class="text-warning decoration-none">Register</a>
                 </button>
             </div>
