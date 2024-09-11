@@ -53,7 +53,6 @@ class EmployeeAdmin(admin.ModelAdmin):
         'user',
         'phone_number',
         'profile_photo',
-        'services_done',
         'work_at',
     ]
     search_fields = [
@@ -61,9 +60,6 @@ class EmployeeAdmin(admin.ModelAdmin):
     ]
     list_filter = [
         'user',
-    ]
-    readonly_fields = [
-        'services_done',
     ]
     list_editable = [
         'work_at',

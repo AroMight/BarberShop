@@ -37,7 +37,6 @@ class Customer(BaseUser):
 
 class Employee(BaseUser):
     work_at = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    services_done = models.IntegerField(default=0)
     profile_photo = models.ImageField(
         upload_to='users/covers/users/%Y/%m/%d', null=True, blank=True, default='')
 

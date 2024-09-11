@@ -35,7 +35,7 @@
                 <form action={% url "users:logout" %} method="POST" class="d-inline">
                     {% csrf_token %}
                     <input type="hidden" name="user" value={{ user }}>
-                    <button type="submit" class="text-light bg-transparent border-0">
+                    <button type="submit" class="text-warning bg-transparent border-0">
                         Logout
                     </button>
                 </form>
@@ -43,6 +43,9 @@
             {% else %}
             <div>
                 <a class="btn btn-cta" href="{% url "users:login" %}">Login</a>
+                <button  class="bg-transparent border-0">
+                    <a href={% url "users:register" %} class="text-warning decoration-none">Register</a>
+                </button>
             </div>
             {% endif %}
 

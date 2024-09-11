@@ -8,7 +8,7 @@ def get_available_employee(form):
     service = form.cleaned_data["service"]
 
     # Get the available employee
-    employees = Employee.objects.filter(services=service).select_related("reservations")
+    employees = Employee.objects.filter(services=service)
 
     # Exclude employees that are already booked
     available_employees = employees.exclude(

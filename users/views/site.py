@@ -54,16 +54,21 @@ class UserLoginView(SuccessMessageMixin, LoginView):
 class UserLogoutView(LogoutView):
     next_page = reverse_lazy("home")
 
+
 class UserReservationsView(LoginRequiredMixin, ListView):
     login_url = reverse_lazy("users:login")
     model = Reservation
     template_name = "users/pages/users_reservations.html"
-    paginate_by = 3
+    paginate_by = 5
     context_object_name = "reservations"
 
     def get_queryset(self):
         qs = super().get_queryset()
-        qs = qs.filter(customer=self.request.user.customer).order_by("-date").select_related("barber", "service")
+        qs = (
+            qs.filter(customer=self.request.user.customer)
+            .order_by("date", "time")
+            .select_related("barber", "service")
+        )
         return qs
 
 

@@ -1,15 +1,22 @@
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
-SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 
-DEBUG = bool(os.environ.get('DEBUG', False))
+def get_env_list(variable_name: str) -> list:
+    if not isinstance(variable_name, str):
+        return []
+    value = os.environ.get(variable_name)
+    list_value = [value.strip() for value in value.split(",") if value]
+    return list_value
 
-ALLOWED_HOSTS = ["*"]
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+DEBUG = os.environ.get("DEBUG_MODE", "False").lower() in ["true", "1"]
+
+ALLOWED_HOSTS = get_env_list("ALLOWED_HOSTS")
 
 # Django DEBUG Toolbar
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
+INTERNAL_IPS = get_env_list("INTERNAL_IPS")

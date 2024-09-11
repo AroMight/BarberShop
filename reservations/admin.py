@@ -9,6 +9,7 @@ class JobsInline(admin.StackedInline):
 class ReservationAdmin(admin.ModelAdmin):
     list_display = [
         'customer',
+        'barber',
         'service',
         'date',
         'time',
@@ -25,6 +26,7 @@ class ReservationAdmin(admin.ModelAdmin):
     ]
     list_editable = [
         'status',
+        'barber',
     ]
     list_display_links = [
         'customer',
