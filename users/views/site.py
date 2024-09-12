@@ -8,6 +8,7 @@ from django.views.generic import FormView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from reservations.models import Reservation
+from users.models import Customer
 from ..forms import RegisterForm, LoginForm
 
 
@@ -63,12 +64,8 @@ class UserReservationsView(LoginRequiredMixin, ListView):
     context_object_name = "reservations"
 
     def get_queryset(self):
-        qs = super().get_queryset()
-        qs = (
-            qs.filter(customer=self.request.user.customer)
-            .order_by("date", "time")
-            .select_related("barber", "service")
-        )
+        # Utilize select_related para trazer as relações ForeignKey de uma só vez
+        qs = Reservation.objects.filter(customer__user=self.request.user).select_related("service", "barber__user", "branch")
         return qs
 
 

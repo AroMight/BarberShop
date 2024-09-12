@@ -6,76 +6,79 @@
 
 {% block content %}
 
-<div class="container mt-4">
-    {% if reservations %}
-    <div class="table-responsive">
-        <table class="table align-middle">
-            <thead>
-                <tr class="text-center">
-                    <th>Barber</th>
-                    <th>Service</th>
-                    <th>Status</th>
-                    <th>When</th>
-                    <th>Where</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for reservation in reservations %}
-                <tr class="text-center">
-                    <td class="d-flex align-items-center">
-                        {% if not reservation.barber %}
-                        <img src="{% static 'barber_shop/assets/unknow-barber.png' %}"
-                            class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
-                        <a href="#"> Waiting... </a>
-                        {% else %}
-                        <img src={{ reservation.barber.profile_photo.url }}
-                            class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
-                        <a href="#">{{ reservation.barber }}</a>
-                        {% endif %}
-                    </td>
-                    <td>
-                        {{ reservation.service }}
-                    </td>
-                    <td>
-                        {% if reservation.status == True %}
-                        <span class="badge text-bg-success">
-                            Confirmed
-                        </span>
-                        {% elif reservation.status == False %}
-                        <span class="badge text-bg-danger">
-                            Cancelled
-                        </span>
-                        {% else %}
-                        <span class="badge text-bg-secondary">
-                            Pending
-                        </span>
-                        {% endif %}
-                    </td>
-                    <td>
-                        {{ reservation.date|date:"d/m/Y" }} at {{ reservation.time|date:"H:i" }}
-                    </td>
-                    <td>
-                        {{ reservation.branch }}
-                    </td>
-                    <td>
-                        <form action="{% url 'users:reservations_delete' reservation.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="user_id" value="{{ user.id }}">
-                            <button type="submit" class="btn btn-danger">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+<main>
+    <div class="container mt-4">
+        {% if reservations %}
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr class="text-center">
+                        <th>Barber</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>When</th>
+                        <th>Where</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reservation in reservations %}
+                    <tr class="text-center">
+                        <td class="d-flex align-items-center">
+                            {% if not reservation.barber %}
+                            <img src="{% static 'barber_shop/assets/unknow-barber.png' %}"
+                                class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
+                            <a href="#"> Waiting... </a>
+                            {% else %}
+                            <img src={{ reservation.barber.profile_photo.url }}
+                                class="rounded-circle me-3 img-fluid" alt="Barber" style="max-width: 100px;">
+                            <a href="#">{{ reservation.barber }}</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ reservation.service }}
+                        </td>
+                        <td>
+                            {% if reservation.status == True %}
+                            <span class="badge text-bg-success">
+                                Confirmed
+                            </span>
+                            {% elif reservation.status == False %}
+                            <span class="badge text-bg-danger">
+                                Cancelled
+                            </span>
+                            {% else %}
+                            <span class="badge text-bg-secondary">
+                                Pending
+                            </span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ reservation.date|date:"d/m/Y" }} at {{ reservation.time|date:"H:i" }}
+                        </td>
+                        <td>
+                            {{ reservation.branch }}
+                        </td>
+                        <td>
+                            <form action="{% url 'users:reservations_delete' reservation.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <h1 class="text-center"> You do not have any reservations yet!</h1>
+        {% endif %}
+    
+    
     </div>
-    {% else %}
-    <h1 class="text-center"> You do not have any reservations yet!</h1>
-    {% endif %}
-
-
-</div>
+</main>
+<hr>
 {% endblock content %}
