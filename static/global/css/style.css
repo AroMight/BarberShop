@@ -3,6 +3,20 @@
     --color-primary-hover: #e09a42;
 }
 
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 h2 {
     margin-bottom: 20px;
     font-size: 2.5rem;
