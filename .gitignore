@@ -4,3 +4,5 @@
 .replit
 *.vscode/
 .coverage*
+static/
+db.sqlite3
