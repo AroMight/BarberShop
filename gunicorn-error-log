@@ -1,0 +1,1629 @@
+[2024-09-13 12:04:07 +0000] [16270] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff08e318040>
+  on_reload: <function OnReload.on_reload at 0x7ff08e318180>
+  when_ready: <function WhenReady.when_ready at 0x7ff08e3182c0>
+  pre_fork: <function Prefork.pre_fork at 0x7ff08e318400>
+  post_fork: <function Postfork.post_fork at 0x7ff08e318540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff08e318680>
+  worker_int: <function WorkerInt.worker_int at 0x7ff08e3187c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff08e318900>
+  pre_exec: <function PreExec.pre_exec at 0x7ff08e318a40>
+  pre_request: <function PreRequest.pre_request at 0x7ff08e318b80>
+  post_request: <function PostRequest.post_request at 0x7ff08e318c20>
+  child_exit: <function ChildExit.child_exit at 0x7ff08e318d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff08e318ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff08e318fe0>
+  on_exit: <function OnExit.on_exit at 0x7ff08e319120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ff08e319300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 12:04:07 +0000] [16270] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 12:04:07 +0000] [16270] [DEBUG] Arbiter booted
+[2024-09-13 12:04:07 +0000] [16270] [INFO] Listening at: unix:/run/barber_shop.socket (16270)
+[2024-09-13 12:04:07 +0000] [16270] [INFO] Using worker: sync
+[2024-09-13 12:04:07 +0000] [16271] [INFO] Booting worker with pid: 16271
+[2024-09-13 12:04:07 +0000] [16272] [INFO] Booting worker with pid: 16272
+[2024-09-13 12:04:07 +0000] [16273] [INFO] Booting worker with pid: 16273
+[2024-09-13 12:04:07 +0000] [16274] [INFO] Booting worker with pid: 16274
+[2024-09-13 12:04:07 +0000] [16275] [INFO] Booting worker with pid: 16275
+[2024-09-13 12:04:07 +0000] [16276] [INFO] Booting worker with pid: 16276
+[2024-09-13 12:04:07 +0000] [16270] [DEBUG] 6 workers
+[2024-09-13 09:04:08 -0300] [16271] [DEBUG] GET /
+ - - [13/Sep/2024:09:04:08 -0300] "GET / HTTP/1.1" 400 143 "-" "curl/7.88.1"
+[2024-09-13 09:05:11 -0300] [16274] [DEBUG] GET /
+ - - [13/Sep/2024:09:05:11 -0300] "GET / HTTP/1.1" 400 143 "-" "curl/7.88.1"
+[2024-09-13 12:05:59 +0000] [16270] [INFO] Handling signal: term
+[2024-09-13 09:05:59 -0300] [16276] [INFO] Worker exiting (pid: 16276)
+[2024-09-13 09:05:59 -0300] [16272] [INFO] Worker exiting (pid: 16272)
+[2024-09-13 09:05:59 -0300] [16273] [INFO] Worker exiting (pid: 16273)
+[2024-09-13 09:05:59 -0300] [16271] [INFO] Worker exiting (pid: 16271)
+[2024-09-13 09:05:59 -0300] [16275] [INFO] Worker exiting (pid: 16275)
+[2024-09-13 09:05:59 -0300] [16274] [INFO] Worker exiting (pid: 16274)
+[2024-09-13 12:05:59 +0000] [16270] [ERROR] Worker (pid:16276) was sent SIGTERM!
+[2024-09-13 12:06:00 +0000] [16270] [INFO] Shutting down: Master
+[2024-09-13 12:06:00 +0000] [16295] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4170714040>
+  on_reload: <function OnReload.on_reload at 0x7f4170714180>
+  when_ready: <function WhenReady.when_ready at 0x7f41707142c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f4170714400>
+  post_fork: <function Postfork.post_fork at 0x7f4170714540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4170714680>
+  worker_int: <function WorkerInt.worker_int at 0x7f41707147c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4170714900>
+  pre_exec: <function PreExec.pre_exec at 0x7f4170714a40>
+  pre_request: <function PreRequest.pre_request at 0x7f4170714b80>
+  post_request: <function PostRequest.post_request at 0x7f4170714c20>
+  child_exit: <function ChildExit.child_exit at 0x7f4170714d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4170714ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4170714fe0>
+  on_exit: <function OnExit.on_exit at 0x7f4170715120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f4170715300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 12:06:00 +0000] [16295] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 12:06:00 +0000] [16295] [DEBUG] Arbiter booted
+[2024-09-13 12:06:00 +0000] [16295] [INFO] Listening at: unix:/run/barber_shop.socket (16295)
+[2024-09-13 12:06:00 +0000] [16295] [INFO] Using worker: sync
+[2024-09-13 12:06:00 +0000] [16297] [INFO] Booting worker with pid: 16297
+[2024-09-13 12:06:00 +0000] [16298] [INFO] Booting worker with pid: 16298
+[2024-09-13 12:06:00 +0000] [16299] [INFO] Booting worker with pid: 16299
+[2024-09-13 12:06:00 +0000] [16300] [INFO] Booting worker with pid: 16300
+[2024-09-13 12:06:00 +0000] [16301] [INFO] Booting worker with pid: 16301
+[2024-09-13 12:06:00 +0000] [16302] [INFO] Booting worker with pid: 16302
+[2024-09-13 12:06:00 +0000] [16295] [DEBUG] 6 workers
+[2024-09-13 12:06:04 +0000] [16295] [INFO] Handling signal: term
+[2024-09-13 09:06:04 -0300] [16297] [INFO] Worker exiting (pid: 16297)
+[2024-09-13 09:06:04 -0300] [16298] [INFO] Worker exiting (pid: 16298)
+[2024-09-13 09:06:04 -0300] [16299] [INFO] Worker exiting (pid: 16299)
+[2024-09-13 09:06:04 -0300] [16300] [INFO] Worker exiting (pid: 16300)
+[2024-09-13 09:06:04 -0300] [16302] [INFO] Worker exiting (pid: 16302)
+[2024-09-13 09:06:04 -0300] [16301] [INFO] Worker exiting (pid: 16301)
+[2024-09-13 12:06:04 +0000] [16295] [ERROR] Worker (pid:16297) was sent SIGTERM!
+[2024-09-13 12:06:05 +0000] [16295] [INFO] Shutting down: Master
+[2024-09-13 12:06:05 +0000] [16307] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7efd4acb4040>
+  on_reload: <function OnReload.on_reload at 0x7efd4acb4180>
+  when_ready: <function WhenReady.when_ready at 0x7efd4acb42c0>
+  pre_fork: <function Prefork.pre_fork at 0x7efd4acb4400>
+  post_fork: <function Postfork.post_fork at 0x7efd4acb4540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7efd4acb4680>
+  worker_int: <function WorkerInt.worker_int at 0x7efd4acb47c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7efd4acb4900>
+  pre_exec: <function PreExec.pre_exec at 0x7efd4acb4a40>
+  pre_request: <function PreRequest.pre_request at 0x7efd4acb4b80>
+  post_request: <function PostRequest.post_request at 0x7efd4acb4c20>
+  child_exit: <function ChildExit.child_exit at 0x7efd4acb4d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7efd4acb4ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7efd4acb4fe0>
+  on_exit: <function OnExit.on_exit at 0x7efd4acb5120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7efd4acb5300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 12:06:05 +0000] [16307] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 12:06:05 +0000] [16307] [DEBUG] Arbiter booted
+[2024-09-13 12:06:05 +0000] [16307] [INFO] Listening at: unix:/run/barber_shop.socket (16307)
+[2024-09-13 12:06:05 +0000] [16307] [INFO] Using worker: sync
+[2024-09-13 12:06:05 +0000] [16308] [INFO] Booting worker with pid: 16308
+[2024-09-13 12:06:05 +0000] [16309] [INFO] Booting worker with pid: 16309
+[2024-09-13 12:06:05 +0000] [16310] [INFO] Booting worker with pid: 16310
+[2024-09-13 12:06:05 +0000] [16311] [INFO] Booting worker with pid: 16311
+[2024-09-13 12:06:05 +0000] [16312] [INFO] Booting worker with pid: 16312
+[2024-09-13 12:06:05 +0000] [16307] [DEBUG] 6 workers
+[2024-09-13 12:06:05 +0000] [16313] [INFO] Booting worker with pid: 16313
+[2024-09-13 12:06:08 +0000] [16307] [INFO] Handling signal: term
+[2024-09-13 09:06:08 -0300] [16308] [INFO] Worker exiting (pid: 16308)
+[2024-09-13 09:06:08 -0300] [16309] [INFO] Worker exiting (pid: 16309)
+[2024-09-13 09:06:08 -0300] [16310] [INFO] Worker exiting (pid: 16310)
+[2024-09-13 09:06:08 -0300] [16311] [INFO] Worker exiting (pid: 16311)
+[2024-09-13 09:06:08 -0300] [16312] [INFO] Worker exiting (pid: 16312)
+[2024-09-13 12:06:08 +0000] [16307] [ERROR] Worker (pid:16308) was sent SIGTERM!
+[2024-09-13 09:06:08 -0300] [16313] [INFO] Worker exiting (pid: 16313)
+[2024-09-13 12:06:08 +0000] [16307] [ERROR] Worker (pid:16310) was sent SIGTERM!
+[2024-09-13 12:06:08 +0000] [16307] [ERROR] Worker (pid:16311) was sent SIGTERM!
+[2024-09-13 12:06:08 +0000] [16307] [ERROR] Worker (pid:16309) was sent SIGTERM!
+[2024-09-13 12:06:08 +0000] [16307] [ERROR] Worker (pid:16312) was sent SIGTERM!
+[2024-09-13 12:06:09 +0000] [16307] [INFO] Shutting down: Master
+[2024-09-13 12:06:09 +0000] [16318] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8b31174040>
+  on_reload: <function OnReload.on_reload at 0x7f8b31174180>
+  when_ready: <function WhenReady.when_ready at 0x7f8b311742c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f8b31174400>
+  post_fork: <function Postfork.post_fork at 0x7f8b31174540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8b31174680>
+  worker_int: <function WorkerInt.worker_int at 0x7f8b311747c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8b31174900>
+  pre_exec: <function PreExec.pre_exec at 0x7f8b31174a40>
+  pre_request: <function PreRequest.pre_request at 0x7f8b31174b80>
+  post_request: <function PostRequest.post_request at 0x7f8b31174c20>
+  child_exit: <function ChildExit.child_exit at 0x7f8b31174d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8b31174ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8b31174fe0>
+  on_exit: <function OnExit.on_exit at 0x7f8b31175120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f8b31175300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 12:06:09 +0000] [16318] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 12:06:09 +0000] [16318] [DEBUG] Arbiter booted
+[2024-09-13 12:06:09 +0000] [16318] [INFO] Listening at: unix:/run/barber_shop.socket (16318)
+[2024-09-13 12:06:09 +0000] [16318] [INFO] Using worker: sync
+[2024-09-13 12:06:09 +0000] [16319] [INFO] Booting worker with pid: 16319
+[2024-09-13 12:06:09 +0000] [16320] [INFO] Booting worker with pid: 16320
+[2024-09-13 12:06:09 +0000] [16321] [INFO] Booting worker with pid: 16321
+[2024-09-13 12:06:09 +0000] [16322] [INFO] Booting worker with pid: 16322
+[2024-09-13 12:06:09 +0000] [16323] [INFO] Booting worker with pid: 16323
+[2024-09-13 12:06:09 +0000] [16324] [INFO] Booting worker with pid: 16324
+[2024-09-13 12:06:09 +0000] [16318] [DEBUG] 6 workers
+[2024-09-13 09:06:11 -0300] [16322] [DEBUG] GET /
+ - - [13/Sep/2024:09:06:11 -0300] "GET / HTTP/1.1" 400 143 "-" "curl/7.88.1"
+[2024-09-13 09:06:21 -0300] [16322] [DEBUG] GET /
+ - - [13/Sep/2024:09:06:21 -0300] "GET / HTTP/1.1" 400 143 "-" "curl/7.88.1"
+[2024-09-13 12:14:47 +0000] [16318] [INFO] Handling signal: term
+[2024-09-13 09:14:47 -0300] [16319] [INFO] Worker exiting (pid: 16319)
+[2024-09-13 09:14:47 -0300] [16320] [INFO] Worker exiting (pid: 16320)
+[2024-09-13 09:14:47 -0300] [16321] [INFO] Worker exiting (pid: 16321)
+[2024-09-13 09:14:47 -0300] [16322] [INFO] Worker exiting (pid: 16322)
+[2024-09-13 09:14:47 -0300] [16323] [INFO] Worker exiting (pid: 16323)
+[2024-09-13 09:14:47 -0300] [16324] [INFO] Worker exiting (pid: 16324)
+[2024-09-13 12:14:47 +0000] [16318] [ERROR] Worker (pid:16319) was sent SIGTERM!
+[2024-09-13 12:14:47 +0000] [16318] [ERROR] Worker (pid:16320) was sent SIGTERM!
+[2024-09-13 12:14:47 +0000] [16318] [INFO] Shutting down: Master
+[2024-09-13 09:23:23 -0300] [544] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1e93f14040>
+  on_reload: <function OnReload.on_reload at 0x7f1e93f14180>
+  when_ready: <function WhenReady.when_ready at 0x7f1e93f142c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f1e93f14400>
+  post_fork: <function Postfork.post_fork at 0x7f1e93f14540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1e93f14680>
+  worker_int: <function WorkerInt.worker_int at 0x7f1e93f147c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1e93f14900>
+  pre_exec: <function PreExec.pre_exec at 0x7f1e93f14a40>
+  pre_request: <function PreRequest.pre_request at 0x7f1e93f14b80>
+  post_request: <function PostRequest.post_request at 0x7f1e93f14c20>
+  child_exit: <function ChildExit.child_exit at 0x7f1e93f14d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1e93f14ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1e93f14fe0>
+  on_exit: <function OnExit.on_exit at 0x7f1e93f15120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f1e93f15300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 09:23:23 -0300] [544] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 09:23:23 -0300] [544] [DEBUG] Arbiter booted
+[2024-09-13 09:23:23 -0300] [544] [INFO] Listening at: unix:/run/barber_shop.socket (544)
+[2024-09-13 09:23:23 -0300] [544] [INFO] Using worker: sync
+[2024-09-13 09:23:23 -0300] [545] [INFO] Booting worker with pid: 545
+[2024-09-13 09:23:23 -0300] [546] [INFO] Booting worker with pid: 546
+[2024-09-13 09:23:23 -0300] [547] [INFO] Booting worker with pid: 547
+[2024-09-13 09:23:23 -0300] [548] [INFO] Booting worker with pid: 548
+[2024-09-13 09:23:23 -0300] [549] [INFO] Booting worker with pid: 549
+[2024-09-13 09:23:23 -0300] [550] [INFO] Booting worker with pid: 550
+[2024-09-13 09:23:23 -0300] [544] [DEBUG] 6 workers
+[2024-09-13 09:23:26 -0300] [544] [INFO] Handling signal: term
+[2024-09-13 09:23:26 -0300] [545] [INFO] Worker exiting (pid: 545)
+[2024-09-13 09:23:26 -0300] [546] [INFO] Worker exiting (pid: 546)
+[2024-09-13 09:23:26 -0300] [547] [INFO] Worker exiting (pid: 547)
+[2024-09-13 09:23:26 -0300] [548] [INFO] Worker exiting (pid: 548)
+[2024-09-13 09:23:26 -0300] [544] [ERROR] Worker (pid:545) was sent SIGTERM!
+[2024-09-13 09:23:26 -0300] [549] [INFO] Worker exiting (pid: 549)
+[2024-09-13 09:23:26 -0300] [550] [INFO] Worker exiting (pid: 550)
+[2024-09-13 09:23:26 -0300] [544] [ERROR] Worker (pid:546) was sent SIGTERM!
+[2024-09-13 09:23:27 -0300] [544] [INFO] Shutting down: Master
+[2024-09-13 09:23:27 -0300] [556] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f26d5f1c040>
+  on_reload: <function OnReload.on_reload at 0x7f26d5f1c180>
+  when_ready: <function WhenReady.when_ready at 0x7f26d5f1c2c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f26d5f1c400>
+  post_fork: <function Postfork.post_fork at 0x7f26d5f1c540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f26d5f1c680>
+  worker_int: <function WorkerInt.worker_int at 0x7f26d5f1c7c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f26d5f1c900>
+  pre_exec: <function PreExec.pre_exec at 0x7f26d5f1ca40>
+  pre_request: <function PreRequest.pre_request at 0x7f26d5f1cb80>
+  post_request: <function PostRequest.post_request at 0x7f26d5f1cc20>
+  child_exit: <function ChildExit.child_exit at 0x7f26d5f1cd60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f26d5f1cea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f26d5f1cfe0>
+  on_exit: <function OnExit.on_exit at 0x7f26d5f1d120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f26d5f1d300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 09:23:27 -0300] [556] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 09:23:27 -0300] [556] [DEBUG] Arbiter booted
+[2024-09-13 09:23:27 -0300] [556] [INFO] Listening at: unix:/run/barber_shop.socket (556)
+[2024-09-13 09:23:27 -0300] [556] [INFO] Using worker: sync
+[2024-09-13 09:23:27 -0300] [559] [INFO] Booting worker with pid: 559
+[2024-09-13 09:23:27 -0300] [560] [INFO] Booting worker with pid: 560
+[2024-09-13 09:23:27 -0300] [561] [INFO] Booting worker with pid: 561
+[2024-09-13 09:23:27 -0300] [562] [INFO] Booting worker with pid: 562
+[2024-09-13 09:23:27 -0300] [563] [INFO] Booting worker with pid: 563
+[2024-09-13 09:23:27 -0300] [564] [INFO] Booting worker with pid: 564
+[2024-09-13 09:23:27 -0300] [556] [DEBUG] 6 workers
+[2024-09-13 09:23:29 -0300] [556] [INFO] Handling signal: term
+[2024-09-13 09:23:29 -0300] [559] [INFO] Worker exiting (pid: 559)
+[2024-09-13 09:23:29 -0300] [560] [INFO] Worker exiting (pid: 560)
+[2024-09-13 09:23:29 -0300] [561] [INFO] Worker exiting (pid: 561)
+[2024-09-13 09:23:29 -0300] [562] [INFO] Worker exiting (pid: 562)
+[2024-09-13 09:23:29 -0300] [563] [INFO] Worker exiting (pid: 563)
+[2024-09-13 09:23:29 -0300] [556] [ERROR] Worker (pid:559) was sent SIGTERM!
+[2024-09-13 09:23:29 -0300] [564] [INFO] Worker exiting (pid: 564)
+[2024-09-13 09:23:29 -0300] [556] [ERROR] Worker (pid:560) was sent SIGTERM!
+[2024-09-13 09:23:30 -0300] [556] [INFO] Shutting down: Master
+[2024-09-13 09:23:30 -0300] [569] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff4e0918040>
+  on_reload: <function OnReload.on_reload at 0x7ff4e0918180>
+  when_ready: <function WhenReady.when_ready at 0x7ff4e09182c0>
+  pre_fork: <function Prefork.pre_fork at 0x7ff4e0918400>
+  post_fork: <function Postfork.post_fork at 0x7ff4e0918540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff4e0918680>
+  worker_int: <function WorkerInt.worker_int at 0x7ff4e09187c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff4e0918900>
+  pre_exec: <function PreExec.pre_exec at 0x7ff4e0918a40>
+  pre_request: <function PreRequest.pre_request at 0x7ff4e0918b80>
+  post_request: <function PostRequest.post_request at 0x7ff4e0918c20>
+  child_exit: <function ChildExit.child_exit at 0x7ff4e0918d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff4e0918ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff4e0918fe0>
+  on_exit: <function OnExit.on_exit at 0x7ff4e0919120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ff4e0919300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 09:23:30 -0300] [569] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 09:23:30 -0300] [569] [DEBUG] Arbiter booted
+[2024-09-13 09:23:30 -0300] [569] [INFO] Listening at: unix:/run/barber_shop.socket (569)
+[2024-09-13 09:23:30 -0300] [569] [INFO] Using worker: sync
+[2024-09-13 09:23:30 -0300] [571] [INFO] Booting worker with pid: 571
+[2024-09-13 09:23:30 -0300] [572] [INFO] Booting worker with pid: 572
+[2024-09-13 09:23:30 -0300] [573] [INFO] Booting worker with pid: 573
+[2024-09-13 09:23:30 -0300] [574] [INFO] Booting worker with pid: 574
+[2024-09-13 09:23:30 -0300] [575] [INFO] Booting worker with pid: 575
+[2024-09-13 09:23:30 -0300] [576] [INFO] Booting worker with pid: 576
+[2024-09-13 09:23:30 -0300] [569] [DEBUG] 6 workers
+[2024-09-13 10:10:46 -0300] [569] [INFO] Handling signal: term
+[2024-09-13 10:10:46 -0300] [571] [INFO] Worker exiting (pid: 571)
+[2024-09-13 10:10:46 -0300] [572] [INFO] Worker exiting (pid: 572)
+[2024-09-13 10:10:46 -0300] [573] [INFO] Worker exiting (pid: 573)
+[2024-09-13 10:10:46 -0300] [574] [INFO] Worker exiting (pid: 574)
+[2024-09-13 10:10:46 -0300] [575] [INFO] Worker exiting (pid: 575)
+[2024-09-13 10:10:46 -0300] [576] [INFO] Worker exiting (pid: 576)
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:572) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:575) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:573) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:576) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:571) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [ERROR] Worker (pid:574) was sent SIGTERM!
+[2024-09-13 10:10:46 -0300] [569] [INFO] Shutting down: Master
+[2024-09-13 10:20:04 -0300] [577] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb37376c040>
+  on_reload: <function OnReload.on_reload at 0x7fb37376c180>
+  when_ready: <function WhenReady.when_ready at 0x7fb37376c2c0>
+  pre_fork: <function Prefork.pre_fork at 0x7fb37376c400>
+  post_fork: <function Postfork.post_fork at 0x7fb37376c540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb37376c680>
+  worker_int: <function WorkerInt.worker_int at 0x7fb37376c7c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb37376c900>
+  pre_exec: <function PreExec.pre_exec at 0x7fb37376ca40>
+  pre_request: <function PreRequest.pre_request at 0x7fb37376cb80>
+  post_request: <function PostRequest.post_request at 0x7fb37376cc20>
+  child_exit: <function ChildExit.child_exit at 0x7fb37376cd60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb37376cea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb37376cfe0>
+  on_exit: <function OnExit.on_exit at 0x7fb37376d120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb37376d300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 10:20:04 -0300] [577] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 10:20:04 -0300] [577] [DEBUG] Arbiter booted
+[2024-09-13 10:20:04 -0300] [577] [INFO] Listening at: unix:/run/barber_shop.socket (577)
+[2024-09-13 10:20:04 -0300] [577] [INFO] Using worker: sync
+[2024-09-13 10:20:04 -0300] [578] [INFO] Booting worker with pid: 578
+[2024-09-13 10:20:04 -0300] [579] [INFO] Booting worker with pid: 579
+[2024-09-13 10:20:04 -0300] [580] [INFO] Booting worker with pid: 580
+[2024-09-13 10:20:04 -0300] [581] [INFO] Booting worker with pid: 581
+[2024-09-13 10:20:04 -0300] [582] [INFO] Booting worker with pid: 582
+[2024-09-13 10:20:04 -0300] [583] [INFO] Booting worker with pid: 583
+[2024-09-13 10:20:05 -0300] [577] [DEBUG] 6 workers
+[2024-09-13 10:20:06 -0300] [579] [DEBUG] GET /
+ - - [13/Sep/2024:10:20:06 -0300] "GET / HTTP/1.1" 200 8950 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:20:13 -0300] [583] [DEBUG] GET /admin
+ - - [13/Sep/2024:10:20:13 -0300] "GET /admin HTTP/1.1" 301 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:20:13 -0300] [579] [DEBUG] GET /admin/
+ - - [13/Sep/2024:10:20:13 -0300] "GET /admin/ HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:20:13 -0300] [583] [DEBUG] GET /admin/login/
+ - - [13/Sep/2024:10:20:13 -0300] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4196 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:32 -0300] [582] [DEBUG] GET /admin/
+ - - [13/Sep/2024:10:22:32 -0300] "GET /admin/ HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:32 -0300] [583] [DEBUG] GET /admin/login/
+ - - [13/Sep/2024:10:22:32 -0300] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4196 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:38 -0300] [579] [DEBUG] POST /admin/login/
+ - - [13/Sep/2024:10:22:38 -0300] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/login/?next=/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:39 -0300] [581] [DEBUG] GET /admin/
+ - - [13/Sep/2024:10:22:39 -0300] "GET /admin/ HTTP/1.1" 200 9530 "http://3.19.79.213/admin/login/?next=/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:49 -0300] [581] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:22:50 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 11312 "http://3.19.79.213/admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:50 -0300] [583] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:22:50 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:52 -0300] [580] [DEBUG] GET /admin/reservations/service/add/
+ - - [13/Sep/2024:10:22:52 -0300] "GET /admin/reservations/service/add/ HTTP/1.1" 200 24424 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:22:53 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:22:53 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:17 -0300] [579] [DEBUG] POST /admin/reservations/service/add/
+ - - [13/Sep/2024:10:25:17 -0300] "POST /admin/reservations/service/add/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:17 -0300] [582] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:25:17 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 14350 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:17 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:25:17 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:22 -0300] [579] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:25:22 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 10728 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:22 -0300] [583] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:25:22 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:24 -0300] [579] [DEBUG] GET /admin/users/employee/add/
+ - - [13/Sep/2024:10:25:24 -0300] "GET /admin/users/employee/add/ HTTP/1.1" 200 25074 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:24 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:25:24 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:26 -0300] [579] [DEBUG] GET /admin/auth/user/add/
+ - - [13/Sep/2024:10:25:26 -0300] "GET /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 18791 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:26 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:25:26 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/auth/user/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:49 -0300] [580] [DEBUG] GET /admin/users/branch/add/
+ - - [13/Sep/2024:10:25:49 -0300] "GET /admin/users/branch/add/?_to_field=id&_popup=1 HTTP/1.1" 200 5678 "http://3.19.79.213/admin/auth/user/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:25:49 -0300] [582] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:25:49 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:26:58 -0300] [578] [DEBUG] POST /admin/users/branch/add/
+ - - [13/Sep/2024:10:26:58 -0300] "POST /admin/users/branch/add/?_to_field=id&_popup=1 HTTP/1.1" 200 337 "http://3.19.79.213/admin/users/branch/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:25 -0300] [583] [DEBUG] POST /admin/auth/user/add/
+ - - [13/Sep/2024:10:27:25 -0300] "POST /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 330 "http://3.19.79.213/admin/auth/user/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:31 -0300] [581] [DEBUG] GET /admin/users/branch/add/
+ - - [13/Sep/2024:10:27:31 -0300] "GET /admin/users/branch/add/?_to_field=id&_popup=1 HTTP/1.1" 200 5678 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:31 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:27:31 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:35 -0300] [581] [DEBUG] GET /admin/users/branch/add/
+ - - [13/Sep/2024:10:27:35 -0300] "GET /admin/users/branch/add/?_to_field=id&_popup=1 HTTP/1.1" 200 5678 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:36 -0300] [582] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:27:36 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:42 -0300] [582] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:27:42 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 14808 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:42 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:27:42 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:27:52 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:27:52 -0300] "GET / HTTP/1.1" 200 10700 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:03 -0300] [579] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:28:03 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 14808 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:03 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:03 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:04 -0300] [583] [DEBUG] GET /admin/users/employee/1/change/
+ - - [13/Sep/2024:10:28:04 -0300] "GET /admin/users/employee/1/change/ HTTP/1.1" 200 25723 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:04 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:04 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/1/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:07 -0300] [583] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:28:07 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 14808 "http://3.19.79.213/admin/users/employee/1/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:07 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:07 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:17 -0300] [583] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:28:17 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 14131 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:17 -0300] [582] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:17 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:20 -0300] [580] [DEBUG] GET /admin/reservations/service/add/
+ - - [13/Sep/2024:10:28:20 -0300] "GET /admin/reservations/service/add/ HTTP/1.1" 200 24604 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:20 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:21 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:26 -0300] [580] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:28:26 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 14131 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:26 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:26 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:27 -0300] [580] [DEBUG] GET /admin/reservations/service/add/
+ - - [13/Sep/2024:10:28:27 -0300] "GET /admin/reservations/service/add/ HTTP/1.1" 200 24604 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:28:28 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:28:28 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:09 -0300] [579] [DEBUG] POST /admin/reservations/service/add/
+ - - [13/Sep/2024:10:29:09 -0300] "POST /admin/reservations/service/add/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:10 -0300] [578] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:29:10 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 15299 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:10 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:29:10 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:12 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:29:12 -0300] "GET / HTTP/1.1" 200 11273 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:25 -0300] [582] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:29:25 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 15080 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:26 -0300] [583] [DEBUG] GET /admin/reservations/service/2/change/
+ - - [13/Sep/2024:10:29:26 -0300] "GET /admin/reservations/service/2/change/ HTTP/1.1" 200 27744 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:29:26 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:29:26 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:01 -0300] [581] [DEBUG] POST /admin/reservations/service/2/change/
+ - - [13/Sep/2024:10:30:01 -0300] "POST /admin/reservations/service/2/change/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/reservations/service/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:01 -0300] [580] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:30:01 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 15322 "http://3.19.79.213/admin/reservations/service/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:01 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:30:01 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:02 -0300] [580] [DEBUG] GET /
+ - - [13/Sep/2024:10:30:02 -0300] "GET / HTTP/1.1" 200 11283 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:15 -0300] [581] [DEBUG] GET /admin/reservations/service/add/
+ - - [13/Sep/2024:10:30:16 -0300] "GET /admin/reservations/service/add/ HTTP/1.1" 200 24604 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:16 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:30:16 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:58 -0300] [580] [DEBUG] POST /admin/reservations/service/add/
+ - - [13/Sep/2024:10:30:58 -0300] "POST /admin/reservations/service/add/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:58 -0300] [579] [DEBUG] GET /admin/reservations/service/
+ - - [13/Sep/2024:10:30:58 -0300] "GET /admin/reservations/service/ HTTP/1.1" 200 16267 "http://3.19.79.213/admin/reservations/service/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:58 -0300] [580] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:30:58 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:30:59 -0300] [579] [DEBUG] GET /
+ - - [13/Sep/2024:10:30:59 -0300] "GET / HTTP/1.1" 200 9491 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:31:02 -0300] [579] [DEBUG] GET /
+ - - [13/Sep/2024:10:31:02 -0300] "GET / HTTP/1.1" 200 9491 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:31:12 -0300] [578] [DEBUG] GET /admin/users/branch/
+ - - [13/Sep/2024:10:31:12 -0300] "GET /admin/users/branch/ HTTP/1.1" 200 12735 "http://3.19.79.213/admin/reservations/service/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:31:13 -0300] [583] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:31:13 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:31:14 -0300] [578] [DEBUG] GET /admin/users/branch/add/
+ - - [13/Sep/2024:10:31:15 -0300] "GET /admin/users/branch/add/ HTTP/1.1" 200 11991 "http://3.19.79.213/admin/users/branch/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:31:15 -0300] [580] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:31:15 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:09 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:32:09 -0300] "GET / HTTP/1.1" 200 11314 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:16 -0300] [581] [DEBUG] POST /admin/users/branch/add/
+ - - [13/Sep/2024:10:32:16 -0300] "POST /admin/users/branch/add/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/users/branch/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:16 -0300] [580] [DEBUG] GET /admin/users/branch/
+ - - [13/Sep/2024:10:32:16 -0300] "GET /admin/users/branch/ HTTP/1.1" 200 13502 "http://3.19.79.213/admin/users/branch/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:16 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:32:16 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/branch/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:17 -0300] [580] [DEBUG] GET /
+ - - [13/Sep/2024:10:32:17 -0300] "GET / HTTP/1.1" 200 11365 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:18 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:32:18 -0300] "GET / HTTP/1.1" 200 12135 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:30 -0300] [581] [DEBUG] POST /users/logout/
+ - - [13/Sep/2024:10:32:30 -0300] "POST /users/logout/ HTTP/1.1" 302 0 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:32:30 -0300] [583] [DEBUG] GET /
+ - - [13/Sep/2024:10:32:30 -0300] "GET / HTTP/1.1" 200 11754 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:00 -0300] [582] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:33:00 -0300] "GET /admin/users/employee/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/users/branch/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:00 -0300] [580] [DEBUG] GET /admin/login/
+ - - [13/Sep/2024:10:33:00 -0300] "GET /admin/login/?next=/admin/users/employee/ HTTP/1.1" 200 4226 "http://3.19.79.213/admin/users/branch/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:04 -0300] [582] [DEBUG] POST /admin/login/
+ - - [13/Sep/2024:10:33:04 -0300] "POST /admin/login/?next=/admin/users/employee/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/login/?next=/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:04 -0300] [579] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:33:04 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 14854 "http://3.19.79.213/admin/login/?next=/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:05 -0300] [582] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:33:05 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:07 -0300] [579] [DEBUG] GET /admin/users/employee/add/
+ - - [13/Sep/2024:10:33:07 -0300] "GET /admin/users/employee/add/ HTTP/1.1" 200 25511 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:07 -0300] [582] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:33:07 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:11 -0300] [579] [DEBUG] GET /admin/auth/user/add/
+ - - [13/Sep/2024:10:33:12 -0300] "GET /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 18977 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:33:12 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:33:12 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/auth/user/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:02 -0300] [580] [DEBUG] POST /admin/auth/user/add/
+ - - [13/Sep/2024:10:34:02 -0300] "POST /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 331 "http://3.19.79.213/admin/auth/user/add/?_to_field=id&_popup=1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:10 -0300] [583] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:10 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:12 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:12 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:14 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:14 -0300] "GET / HTTP/1.1" 200 11360 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:16 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:16 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:16 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:16 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:27 -0300] [580] [DEBUG] POST /admin/users/employee/add/
+ - - [13/Sep/2024:10:34:27 -0300] "POST /admin/users/employee/add/ HTTP/1.1" 200 25723 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:27 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:27 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:28 -0300] [580] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:28 -0300] "GET / HTTP/1.1" 200 11365 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:32 -0300] [579] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:34:32 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16776 "http://3.19.79.213/admin/users/employee/add/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:32 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:32 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:33 -0300] [579] [DEBUG] GET /admin/users/employee/2/change/
+ - - [13/Sep/2024:10:34:33 -0300] "GET /admin/users/employee/2/change/ HTTP/1.1" 200 26117 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:33 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:33 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:39 -0300] [579] [DEBUG] GET /admin/auth/user/
+ - - [13/Sep/2024:10:34:39 -0300] "GET /admin/auth/user/ HTTP/1.1" 200 14880 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:39 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:39 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/auth/user/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:41 -0300] [581] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:34:41 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16776 "http://3.19.79.213/admin/auth/user/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:41 -0300] [583] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:41 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:42 -0300] [581] [DEBUG] GET /admin/users/employee/2/change/
+ - - [13/Sep/2024:10:34:42 -0300] "GET /admin/users/employee/2/change/ HTTP/1.1" 200 26117 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:42 -0300] [583] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:34:42 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:46 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:46 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:47 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:47 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:48 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:48 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:49 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:49 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:49 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:49 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:50 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:50 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:51 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:51 -0300] "GET / HTTP/1.1" 200 11360 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:52 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:52 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:34:52 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:34:52 -0300] "GET / HTTP/1.1" 200 11360 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:04 -0300] [580] [DEBUG] POST /admin/users/employee/2/change/
+ - - [13/Sep/2024:10:35:04 -0300] "POST /admin/users/employee/2/change/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:05 -0300] [583] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:35:05 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16989 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:05 -0300] [580] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:05 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:06 -0300] [583] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:06 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:07 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:07 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:07 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:07 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:08 -0300] [578] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:08 -0300] "GET / HTTP/1.1" 200 11360 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:09 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:09 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:20 -0300] [581] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:35:20 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16776 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:21 -0300] [580] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:21 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:24 -0300] [581] [DEBUG] POST /admin/users/employee/
+ - - [13/Sep/2024:10:35:24 -0300] "POST /admin/users/employee/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:25 -0300] [579] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:35:25 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16928 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:25 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:25 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:27 -0300] [579] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:27 -0300] "GET / HTTP/1.1" 200 9537 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:29 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:29 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:39 -0300] [579] [DEBUG] GET /admin/users/employee/1/change/
+ - - [13/Sep/2024:10:35:39 -0300] "GET /admin/users/employee/1/change/ HTTP/1.1" 200 31338 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:39 -0300] [578] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:39 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/1/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:44 -0300] [578] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:35:44 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16776 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:45 -0300] [579] [DEBUG] GET /admin/users/employee/2/change/
+ - - [13/Sep/2024:10:35:45 -0300] "GET /admin/users/employee/2/change/ HTTP/1.1" 200 28729 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:45 -0300] [581] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:45 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:51 -0300] [579] [DEBUG] POST /admin/users/employee/2/change/
+ - - [13/Sep/2024:10:35:51 -0300] "POST /admin/users/employee/2/change/ HTTP/1.1" 302 0 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:52 -0300] [583] [DEBUG] GET /admin/users/employee/
+ - - [13/Sep/2024:10:35:52 -0300] "GET /admin/users/employee/ HTTP/1.1" 200 16989 "http://3.19.79.213/admin/users/employee/2/change/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:52 -0300] [579] [DEBUG] GET /admin/jsi18n/
+ - - [13/Sep/2024:10:35:52 -0300] "GET /admin/jsi18n/ HTTP/1.1" 200 8959 "http://3.19.79.213/admin/users/employee/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:56 -0300] [583] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:56 -0300] "GET / HTTP/1.1" 200 12135 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:35:58 -0300] [582] [DEBUG] GET /
+ - - [13/Sep/2024:10:35:58 -0300] "GET / HTTP/1.1" 200 10823 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:36:10 -0300] [578] [DEBUG] POST /reservations/
+ - - [13/Sep/2024:10:36:10 -0300] "POST /reservations/ HTTP/1.1" 500 145 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:37:29 -0300] [581] [DEBUG] GET /
+ - - [13/Sep/2024:10:37:29 -0300] "GET / HTTP/1.1" 200 11754 "-" "Go-http-client/1.1"
+[2024-09-13 10:37:30 -0300] [582] [DEBUG] GET /cgi-bin/luci/;stok=/locale
+ - - [13/Sep/2024:10:37:30 -0300] "GET /cgi-bin/luci/;stok=/locale HTTP/1.1" 404 179 "-" "Go-http-client/1.1"
+[2024-09-13 10:37:34 -0300] [578] [DEBUG] GET /reservations/
+ - - [13/Sep/2024:10:37:34 -0300] "GET /reservations/ HTTP/1.1" 405 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:37:41 -0300] [579] [DEBUG] POST /reservations/
+ - - [13/Sep/2024:10:37:41 -0300] "POST /reservations/ HTTP/1.1" 500 145 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:38:38 -0300] [577] [INFO] Handling signal: term
+[2024-09-13 10:38:38 -0300] [578] [INFO] Worker exiting (pid: 578)
+[2024-09-13 10:38:38 -0300] [579] [INFO] Worker exiting (pid: 579)
+[2024-09-13 10:38:38 -0300] [580] [INFO] Worker exiting (pid: 580)
+[2024-09-13 10:38:38 -0300] [581] [INFO] Worker exiting (pid: 581)
+[2024-09-13 10:38:38 -0300] [582] [INFO] Worker exiting (pid: 582)
+[2024-09-13 10:38:38 -0300] [583] [INFO] Worker exiting (pid: 583)
+[2024-09-13 10:38:40 -0300] [577] [INFO] Shutting down: Master
+[2024-09-13 10:38:50 -0300] [437] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6002b80040>
+  on_reload: <function OnReload.on_reload at 0x7f6002b80180>
+  when_ready: <function WhenReady.when_ready at 0x7f6002b802c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f6002b80400>
+  post_fork: <function Postfork.post_fork at 0x7f6002b80540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6002b80680>
+  worker_int: <function WorkerInt.worker_int at 0x7f6002b807c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6002b80900>
+  pre_exec: <function PreExec.pre_exec at 0x7f6002b80a40>
+  pre_request: <function PreRequest.pre_request at 0x7f6002b80b80>
+  post_request: <function PostRequest.post_request at 0x7f6002b80c20>
+  child_exit: <function ChildExit.child_exit at 0x7f6002b80d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6002b80ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6002b80fe0>
+  on_exit: <function OnExit.on_exit at 0x7f6002b81120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f6002b81300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 10:38:50 -0300] [437] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 10:38:50 -0300] [437] [DEBUG] Arbiter booted
+[2024-09-13 10:38:50 -0300] [437] [INFO] Listening at: unix:/run/barber_shop.socket (437)
+[2024-09-13 10:38:50 -0300] [437] [INFO] Using worker: sync
+[2024-09-13 10:38:50 -0300] [446] [INFO] Booting worker with pid: 446
+[2024-09-13 10:38:50 -0300] [449] [INFO] Booting worker with pid: 449
+[2024-09-13 10:38:51 -0300] [450] [INFO] Booting worker with pid: 450
+[2024-09-13 10:38:51 -0300] [451] [INFO] Booting worker with pid: 451
+[2024-09-13 10:38:51 -0300] [452] [INFO] Booting worker with pid: 452
+[2024-09-13 10:38:51 -0300] [453] [INFO] Booting worker with pid: 453
+[2024-09-13 10:38:51 -0300] [437] [DEBUG] 6 workers
+[2024-09-13 10:38:52 -0300] [446] [DEBUG] GET /
+ - - [13/Sep/2024:10:38:52 -0300] "GET / HTTP/1.1" 200 12628 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:39:16 -0300] [446] [DEBUG] POST /reservations/
+ - - [13/Sep/2024:10:39:16 -0300] "POST /reservations/ HTTP/1.1" 500 145 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:39:27 -0300] [446] [DEBUG] GET /
+ - - [13/Sep/2024:10:39:27 -0300] "GET / HTTP/1.1" 200 12247 "-" "-"
+[2024-09-13 10:43:19 -0300] [453] [DEBUG] POST /reservations/
+ - - [13/Sep/2024:10:43:19 -0300] "POST /reservations/ HTTP/1.1" 500 145 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:21 -0300] [446] [DEBUG] GET /
+ - - [13/Sep/2024:10:43:21 -0300] "GET / HTTP/1.1" 200 12628 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:23 -0300] [453] [DEBUG] POST /users/logout/
+ - - [13/Sep/2024:10:43:23 -0300] "POST /users/logout/ HTTP/1.1" 302 0 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:23 -0300] [452] [DEBUG] GET /
+ - - [13/Sep/2024:10:43:23 -0300] "GET / HTTP/1.1" 200 12247 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:24 -0300] [453] [DEBUG] GET /users/register/
+ - - [13/Sep/2024:10:43:24 -0300] "GET /users/register/ HTTP/1.1" 200 6460 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:42 -0300] [450] [DEBUG] GET /
+ - - [13/Sep/2024:10:43:42 -0300] "GET / HTTP/1.1" 200 12247 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46"
+[2024-09-13 10:43:49 -0300] [450] [DEBUG] POST /users/register/
+ - - [13/Sep/2024:10:43:49 -0300] "POST /users/register/ HTTP/1.1" 302 0 "http://3.19.79.213/users/register/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:49 -0300] [453] [DEBUG] GET /users/login/
+ - - [13/Sep/2024:10:43:49 -0300] "GET /users/login/ HTTP/1.1" 200 5386 "http://3.19.79.213/users/register/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:55 -0300] [453] [DEBUG] POST /users/login/
+ - - [13/Sep/2024:10:43:55 -0300] "POST /users/login/ HTTP/1.1" 302 0 "http://3.19.79.213/users/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:55 -0300] [452] [DEBUG] GET /
+ - - [13/Sep/2024:10:43:55 -0300] "GET / HTTP/1.1" 200 12892 "http://3.19.79.213/users/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:58 -0300] [453] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:43:58 -0300] "GET /users/reservations/ HTTP/1.1" 200 3830 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:43:59 -0300] [452] [DEBUG] GET /
+ - - [13/Sep/2024:10:44:00 -0300] "GET / HTTP/1.1" 200 12632 "http://3.19.79.213/users/reservations/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:44:09 -0300] [453] [DEBUG] POST /reservations/
+ - - [13/Sep/2024:10:44:09 -0300] "POST /reservations/ HTTP/1.1" 302 0 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:44:09 -0300] [449] [DEBUG] GET /
+ - - [13/Sep/2024:10:44:09 -0300] "GET / HTTP/1.1" 200 12898 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:44:17 -0300] [449] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:44:17 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:50:04 -0300] [450] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:50:04 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:50:05 -0300] [453] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:50:05 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:51:27 -0300] [449] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:27 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:51:28 -0300] [451] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:28 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:51:28 -0300] [449] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:28 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:51:28 -0300] [451] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:28 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:51:32 -0300] [451] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:32 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36"
+[2024-09-13 10:51:33 -0300] [449] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:51:33 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36"
+[2024-09-13 10:52:47 -0300] [437] [INFO] Handling signal: term
+[2024-09-13 10:52:47 -0300] [446] [INFO] Worker exiting (pid: 446)
+[2024-09-13 10:52:47 -0300] [449] [INFO] Worker exiting (pid: 449)
+[2024-09-13 10:52:47 -0300] [450] [INFO] Worker exiting (pid: 450)
+[2024-09-13 10:52:47 -0300] [451] [INFO] Worker exiting (pid: 451)
+[2024-09-13 10:52:47 -0300] [452] [INFO] Worker exiting (pid: 452)
+[2024-09-13 10:52:47 -0300] [453] [INFO] Worker exiting (pid: 453)
+[2024-09-13 10:52:47 -0300] [437] [ERROR] Worker (pid:449) was sent SIGTERM!
+[2024-09-13 10:52:48 -0300] [437] [INFO] Shutting down: Master
+[2024-09-13 10:53:04 -0300] [469] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc854d14040>
+  on_reload: <function OnReload.on_reload at 0x7fc854d14180>
+  when_ready: <function WhenReady.when_ready at 0x7fc854d142c0>
+  pre_fork: <function Prefork.pre_fork at 0x7fc854d14400>
+  post_fork: <function Postfork.post_fork at 0x7fc854d14540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc854d14680>
+  worker_int: <function WorkerInt.worker_int at 0x7fc854d147c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc854d14900>
+  pre_exec: <function PreExec.pre_exec at 0x7fc854d14a40>
+  pre_request: <function PreRequest.pre_request at 0x7fc854d14b80>
+  post_request: <function PostRequest.post_request at 0x7fc854d14c20>
+  child_exit: <function ChildExit.child_exit at 0x7fc854d14d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc854d14ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc854d14fe0>
+  on_exit: <function OnExit.on_exit at 0x7fc854d15120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fc854d15300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 10:53:04 -0300] [469] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 10:53:04 -0300] [469] [DEBUG] Arbiter booted
+[2024-09-13 10:53:04 -0300] [469] [INFO] Listening at: unix:/run/barber_shop.socket (469)
+[2024-09-13 10:53:04 -0300] [469] [INFO] Using worker: sync
+[2024-09-13 10:53:04 -0300] [470] [INFO] Booting worker with pid: 470
+[2024-09-13 10:53:04 -0300] [471] [INFO] Booting worker with pid: 471
+[2024-09-13 10:53:05 -0300] [472] [INFO] Booting worker with pid: 472
+[2024-09-13 10:53:05 -0300] [473] [INFO] Booting worker with pid: 473
+[2024-09-13 10:53:05 -0300] [474] [INFO] Booting worker with pid: 474
+[2024-09-13 10:53:05 -0300] [475] [INFO] Booting worker with pid: 475
+[2024-09-13 10:53:05 -0300] [469] [DEBUG] 6 workers
+[2024-09-13 10:53:06 -0300] [470] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:06 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:10 -0300] [470] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:10 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:10 -0300] [475] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:10 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:11 -0300] [470] [DEBUG] GET /
+ - - [13/Sep/2024:10:53:11 -0300] "GET / HTTP/1.1" 200 12632 "http://3.19.79.213/users/reservations/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:12 -0300] [475] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:12 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:14 -0300] [470] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:14 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:53:15 -0300] [475] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:53:15 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:35 -0300] [471] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:54:35 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:35 -0300] [475] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:54:35 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:36 -0300] [471] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:54:36 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:36 -0300] [475] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:54:36 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:37 -0300] [474] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:54:37 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+[2024-09-13 10:54:41 -0300] [469] [INFO] Handling signal: term
+[2024-09-13 10:54:41 -0300] [470] [INFO] Worker exiting (pid: 470)
+[2024-09-13 10:54:41 -0300] [471] [INFO] Worker exiting (pid: 471)
+[2024-09-13 10:54:41 -0300] [472] [INFO] Worker exiting (pid: 472)
+[2024-09-13 10:54:41 -0300] [473] [INFO] Worker exiting (pid: 473)
+[2024-09-13 10:54:41 -0300] [474] [INFO] Worker exiting (pid: 474)
+[2024-09-13 10:54:41 -0300] [475] [INFO] Worker exiting (pid: 475)
+[2024-09-13 10:54:41 -0300] [469] [ERROR] Worker (pid:470) was sent SIGTERM!
+[2024-09-13 10:54:41 -0300] [469] [ERROR] Worker (pid:471) was sent SIGTERM!
+[2024-09-13 10:54:42 -0300] [469] [INFO] Shutting down: Master
+[2024-09-13 10:55:16 -0300] [498] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/barber_shop.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/admin/app_repo
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/admin/app_repo/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: barber_shop.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6a660d0040>
+  on_reload: <function OnReload.on_reload at 0x7f6a660d0180>
+  when_ready: <function WhenReady.when_ready at 0x7f6a660d02c0>
+  pre_fork: <function Prefork.pre_fork at 0x7f6a660d0400>
+  post_fork: <function Postfork.post_fork at 0x7f6a660d0540>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6a660d0680>
+  worker_int: <function WorkerInt.worker_int at 0x7f6a660d07c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6a660d0900>
+  pre_exec: <function PreExec.pre_exec at 0x7f6a660d0a40>
+  pre_request: <function PreRequest.pre_request at 0x7f6a660d0b80>
+  post_request: <function PostRequest.post_request at 0x7f6a660d0c20>
+  child_exit: <function ChildExit.child_exit at 0x7f6a660d0d60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6a660d0ea0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6a660d0fe0>
+  on_exit: <function OnExit.on_exit at 0x7f6a660d1120>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f6a660d1300>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-09-13 10:55:16 -0300] [498] [INFO] Starting gunicorn 23.0.0
+[2024-09-13 10:55:16 -0300] [498] [DEBUG] Arbiter booted
+[2024-09-13 10:55:16 -0300] [498] [INFO] Listening at: unix:/run/barber_shop.socket (498)
+[2024-09-13 10:55:16 -0300] [498] [INFO] Using worker: sync
+[2024-09-13 10:55:16 -0300] [499] [INFO] Booting worker with pid: 499
+[2024-09-13 10:55:16 -0300] [500] [INFO] Booting worker with pid: 500
+[2024-09-13 10:55:16 -0300] [501] [INFO] Booting worker with pid: 501
+[2024-09-13 10:55:16 -0300] [502] [INFO] Booting worker with pid: 502
+[2024-09-13 10:55:16 -0300] [503] [INFO] Booting worker with pid: 503
+[2024-09-13 10:55:16 -0300] [504] [INFO] Booting worker with pid: 504
+[2024-09-13 10:55:16 -0300] [498] [DEBUG] 6 workers
+[2024-09-13 10:55:18 -0300] [500] [DEBUG] GET /users/reservations/
+ - - [13/Sep/2024:10:55:18 -0300] "GET /users/reservations/ HTTP/1.1" 200 5941 "http://3.19.79.213/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
