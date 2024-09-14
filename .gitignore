@@ -1,4 +1,5 @@
 .venv/
+venv/
 **/__pycache__/
 *.env
 .replit
@@ -6,3 +7,4 @@
 .coverage*
 static/
 db.sqlite3
+gunicorn-error-log
