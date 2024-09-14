@@ -23,5 +23,5 @@ ALLOWED_HOSTS = get_env_list("ALLOWED_HOSTS")
 INTERNAL_IPS = get_env_list("INTERNAL_IPS")
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.barbershops.studio/"
+    "https://*.barbershops.studio"
 ]
