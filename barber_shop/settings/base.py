@@ -4,8 +4,8 @@ from .environment import SECRET_KEY, DEBUG, ALLOWED_HOSTS
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-ROOT_URLCONF = 'barber_shop.urls'
+ROOT_URLCONF = "barber_shop.urls"
 
-WSGI_APPLICATION = 'barber_shop.wsgi.application'
+WSGI_APPLICATION = "barber_shop.wsgi.application"
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
