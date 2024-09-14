@@ -22,8 +22,9 @@ ALLOWED_HOSTS = get_env_list("ALLOWED_HOSTS")
 INTERNAL_IPS = get_env_list("INTERNAL_IPS")
 
 if not DEBUG:
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-    CSRF_COOKIE_DOMAIN = "www.barbershops.studio"
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    CSRF_TRUSTED_ORIGINS = [
+        "https://www.barbershops.studio/",
+        "http://www.barbershops.studio/",
+        "http://barbershops.studio/",
+        "http://barbershops.studio/",
+    ]
