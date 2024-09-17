@@ -15,13 +15,11 @@ def get_env_list(variable_name: str) -> list:
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = os.environ.get("DEBUG_MODE", "False").lower() in ["true", "1"]
-print(f"DEBUG: {DEBUG}")
 
 ALLOWED_HOSTS = get_env_list("ALLOWED_HOSTS")
 
 # Django DEBUG Toolbar
 INTERNAL_IPS = get_env_list("INTERNAL_IPS")
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.barbershops.studio"
-]
+CSRF_TRUSTED_ORIGINS = get_env_list("TRUSTED_ORIGINS")
+print(f"CSRF_TRUSTED_ORIGINS: {CSRF_TRUSTED_ORIGINS}")
