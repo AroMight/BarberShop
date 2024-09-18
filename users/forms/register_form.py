@@ -143,26 +143,26 @@ class RegisterForm(forms.ModelForm):
                 )
         return phone_number
 
-    # def save(self, commit: bool = True):
-    #     if self.errors:
-    #         raise ValueError(
-    #             "The %s could not be %s because the data didn't validate."
-    #             % (
-    #                 self.instance._meta.object_name,
-    #                 "created" if self.instance._state.adding else "changed",
-    #             )
-    #         )
-    #     if commit:
-    #         user = User.objects.create_user(
-    #             username=self.cleaned_data.get("username"),
-    #             email=self.cleaned_data.get("email"),
-    #             password=self.cleaned_data.get("password"),
-    #         )
+    def save(self, commit: bool = True):
+        if self.errors:
+            raise ValueError(
+                "The %s could not be %s because the data didn't validate."
+                % (
+                    self.instance._meta.object_name,
+                    "created" if self.instance._state.adding else "changed",
+                )
+            )
+        if commit:
+            user = User.objects.create_user(
+                username=self.cleaned_data.get("username"),
+                email=self.cleaned_data.get("email"),
+                password=self.cleaned_data.get("password"),
+            )
 
-    #         Customer.objects.create(
-    #             user=user,
-    #             phone_number=self.cleaned_data.get("phone_number"),
-    #         )
-    #     else:
-    #         self.save_m2m = self._save_m2m
-    #     return self.instance
+            Customer.objects.create(
+                user=user,
+                phone_number=self.cleaned_data.get("phone_number"),
+            )
+        else:
+            self.save_m2m = self._save_m2m
+        return self.instance
