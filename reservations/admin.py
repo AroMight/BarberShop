@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Service, Reservation
-
+from tags.models import TaggedItem
+from django.contrib.contenttypes.admin import GenericStackedInline
 
 class JobsInline(admin.StackedInline):
     model = Service.barbers.through
@@ -36,6 +37,10 @@ class ReservationAdmin(admin.ModelAdmin):
         'created_at',
     ]
 
+class TaggedItemInline(GenericStackedInline):
+    model = TaggedItem
+    extra = 1
+
 class ServiceAdmin(admin.ModelAdmin):
     list_display = [
         'name',
@@ -60,6 +65,7 @@ class ServiceAdmin(admin.ModelAdmin):
     ]
     inlines = [
         JobsInline,
+        TaggedItemInline,
     ]
 
 

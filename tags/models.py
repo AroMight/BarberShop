@@ -10,10 +10,10 @@ class TagsNames(models.Model):
         return self.name
 
 class TaggedItem(models.Model):
-    name = models.ForeignKey(TagsNames, on_delete=models.CASCADE)
+    tag = models.ForeignKey(TagsNames, on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey("content_type", "object_id")
 
     def __str__(self):
-        return self.name
+        return self.tag.name

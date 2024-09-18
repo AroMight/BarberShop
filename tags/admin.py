@@ -9,4 +9,9 @@ class TagsNamesAdmin(admin.ModelAdmin):
 
 @admin.register(TaggedItem)
 class TagsNamesAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        "tag",
+        "content_type",
+        "object_id",
+        "content_object",
+    ]

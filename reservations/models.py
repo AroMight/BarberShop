@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
+from tags.models import TaggedItem
 from users.models import Employee, Customer, Branch
 
 
@@ -13,6 +15,7 @@ class Service(models.Model):
     status = models.BooleanField(default=False)
     is_highlighted = models.BooleanField(default=False)
     barbers = models.ManyToManyField(Employee, related_name="services", blank=True)
+    tags = GenericRelation(TaggedItem, on_delete=models.CASCADE)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
