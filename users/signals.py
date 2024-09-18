@@ -17,7 +17,6 @@ def delete_user(instance):
 
 def delete_old_cover_image(instance):
     """Delete the old cover image when a new one is uploaded."""
-    print("PASSEEEEI AQUI")
     try:
         os.remove(instance.profile_photo.path)
     except (FileNotFoundError, ValueError) as e:
