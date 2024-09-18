@@ -21,16 +21,18 @@ Para configurar este projeto em seu ambiente local, siga estas etapas:
 5. Inicie o servidor de desenvolvimento com `python manage.py runserver`.
 
 ## Melhorias
-Uma lista de melhorias e revisões que pretendo fazer.
+Uma lista de melhorias e revisões que pretendo fazer. A medida que for descobrindo as respostas de cada ponto, irei atualizando.
 
 1. Com certeza deve haver uma forma mais apropriada de integrar as messages do que com a solução encontrada;
 2. Reorganizar os arquivos `static` que estão dentro da pasta principal do projeto;
 3. Há uma forma mais elegante de criar perfis de usuário? Ou a solução encontrada é adequada?
-4. Existe uma forma melhor de criar novos "customers" usando o form de registro do que sobscrevendo o método `save()` do form?
-5. Reorganizar o arquivo `admin.py` do app "users";
-6. O django-debug-toolbar não está funcionando. Fix it!
+  <br> Sim, signals. A princípio o pre_save parece ser uma boa forma de realizar isso. Irei testar.
+5. Existe uma forma melhor de criar novos "customers" usando o form de registro do que sobscrevendo o método `save()` do form?
+  <br> Sim, signals. A princípio o pre_save parece ser uma boa forma de realizar isso. Irei testar.
+7. Reorganizar o arquivo `admin.py` do app "users";
+8. O django-debug-toolbar não está funcionando. Fix it!
   <br>✅ Concluido:  O problema estava na configuração do INTERNAL_IP
-8. O `allowed_host` precisa ir para o arquivo `.env`;
+9. O `allowed_host` precisa ir para o arquivo `.env`;
   <br>✅ Concluido
 10. O design do forms está horrível. Consertar;
 11. Entender melhor a forma mais adequada de lidar com assets;
