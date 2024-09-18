@@ -4,6 +4,8 @@
 
 Este repositório é um projeto pessoal de um site (futuramente um app) de uma barbearia.
 
+Você pode acessar o site através do link https://www.barbershops.studio/
+
 Estou utilizando este projeto para aprofundar meu conhecimento em Django, além de colocar em prática meu conhecimentos já adquiridos.
 
 Como foquei mais na parte do backend, algumas questões, principalmente de design, não tiveram a atenção necessária, mas pretendo pouco a pouco corrigir os bugs e decisões questionáveis.
@@ -26,13 +28,16 @@ Uma lista de melhorias e revisões que pretendo fazer.
 3. Há uma forma mais elegante de criar perfis de usuário? Ou a solução encontrada é adequada?
 4. Existe uma forma melhor de criar novos "customers" usando o form de registro do que sobscrevendo o método `save()` do form?
 5. Reorganizar o arquivo `admin.py` do app "users";
-6. O django-debug-toolbar não está funcionando. Fix it! #concluido
-7. O `allowed_host` precisa ir para o arquivo `.env`;
-8. O design do forms está horrível. Consertar;
-9. Entender melhor a forma mais adequada de lidar com assets;
-10. Extrair modelos dos cards de "services" e "staff" para arquivos .html;
-11. Desenvolver a API com Django Rest Framework;
-12. Configurar o método `delete()` do models Customers e Staff para excluir também o "user" correspondente;
+6. O django-debug-toolbar não está funcionando. Fix it!
+   <br>✅ Concluido:  O problema estava na configuração do INTERNAL_IP
+8. O `allowed_host` precisa ir para o arquivo `.env`;
+    <br>✅ Concluido
+10. O design do forms está horrível. Consertar;
+11. Entender melhor a forma mais adequada de lidar com assets;
+12. Extrair modelos dos cards de "services" e "staff" para arquivos .html;
+     <br>✅ Concluido: Feito, porém percebi que como o design da home depende dos "services", "staffs" e "branches" cadastradas, talvez não seja uma boa idéia fazer dessa maneira. 
+14. Desenvolver a API com Django Rest Framework;
+15. Configurar o método `delete()` do models Customers e Staff para excluir também o "user" correspondente;
 
 ## Contribuindo
 Contribuições são bem-vindas!
