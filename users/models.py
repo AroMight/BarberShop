@@ -27,12 +27,6 @@ class Customer(BaseUser):
 
     def __str__(self):
         return str(self.user)
-    
-    def clean(self):
-        if self.phone_number:
-            if Customer.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists():
-                raise ValidationError(
-                    {'phone_number': 'This number is already in use.'})
 
 
 class Employee(BaseUser):

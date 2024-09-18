@@ -7,7 +7,7 @@ load_dotenv()
 def get_env_list(variable_name: str) -> list:
     if not isinstance(variable_name, str):
         return []
-    value = os.environ.get(variable_name)
+    value = os.environ.get(variable_name, '')
     list_value = [value.strip() for value in value.split(",") if value]
     return list_value
 
@@ -22,4 +22,3 @@ ALLOWED_HOSTS = get_env_list("ALLOWED_HOSTS")
 INTERNAL_IPS = get_env_list("INTERNAL_IPS")
 
 CSRF_TRUSTED_ORIGINS = get_env_list("TRUSTED_ORIGINS")
-print(f"CSRF_TRUSTED_ORIGINS: {CSRF_TRUSTED_ORIGINS}")
