@@ -33,7 +33,10 @@ def delete_user_on_related_model_delete(sender, instance, *args, **kwargs):
 def delete_old_cover_image_on_employee_delete(sender, instance, *args, **kwargs):
     old_instance = Employee.objects.filter(pk=instance.pk).first()
 
-    is_new_cover = old_instance.profile_photo != instance.profile_photo
+    if old_instance is not None:
+        is_new_cover = old_instance.profile_photo != instance.profile_photo
 
-    if old_instance.profile_photo and is_new_cover:
-        delete_old_cover_image(old_instance)
+        if is_new_cover:
+            delete_old_cover_image(old_instance)
+        else:
+            pass

@@ -44,6 +44,7 @@ class Employee(BaseUser):
     def resize_image(image, new_width=300):
         """Resize an image to a new width."""
         image_full_path = os.path.join(settings.MEDIA_ROOT, image.name)
+        print(image_full_path)
         image_pillow = Image.open(image_full_path)
         original_width, original_height = image_pillow.size
 
@@ -57,9 +58,14 @@ class Employee(BaseUser):
         new_image_pillow.save(
             image_full_path,
             optimize=True,
-            quality=60,
+            quality=30,
         )
 
     def save(self, *args, **kwargs):
         saved = super().save(*args, **kwargs)
-        self.resize_image(self.profile_photo)
+        if self.profile_photo:
+            try:
+                self.resize_image(self.profile_photo)
+            except FileNotFoundError:
+                pass
+        return saved
