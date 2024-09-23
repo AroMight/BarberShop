@@ -1,3 +1,6 @@
+import os
+from PIL import Image
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -36,3 +39,27 @@ class Employee(BaseUser):
 
     def __str__(self):
         return str(self.user)
+
+    @staticmethod
+    def resize_image(image, new_width=300):
+        """Resize an image to a new width."""
+        image_full_path = os.path.join(settings.MEDIA_ROOT, image.name)
+        image_pillow = Image.open(image_full_path)
+        original_width, original_height = image_pillow.size
+
+        if original_width <= new_width:
+            image_pillow.close()
+            return
+
+        new_height = round((new_width / original_width) * original_height)
+
+        new_image_pillow = image_pillow.resize((new_width, new_height), Image.LANCZOS)
+        new_image_pillow.save(
+            image_full_path,
+            optimize=True,
+            quality=60,
+        )
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.resize_image(self.profile_photo)
