@@ -61,5 +61,5 @@ class Employee(BaseUser):
         )
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+        saved = super().save(*args, **kwargs)
         self.resize_image(self.profile_photo)
