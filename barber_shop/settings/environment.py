@@ -7,7 +7,7 @@ load_dotenv()
 def get_env_list(variable_name: str) -> list:
     if not isinstance(variable_name, str):
         return []
-    value = os.environ.get(variable_name)
+    value = os.environ.get(variable_name, '')
     list_value = [value.strip() for value in value.split(",") if value]
     return list_value
 
