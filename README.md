@@ -4,12 +4,6 @@
 
 Este repositório é um projeto pessoal de um site (futuramente um app) de uma barbearia.
 
-Você pode acessar o site através do link <https://www.barbershops.studio/>
-
-Estou utilizando este projeto para aprofundar meu conhecimento em Django, além de colocar em prática meu conhecimentos já adquiridos.
-
-Como foquei mais na parte do backend, algumas questões, principalmente de design, não tiveram a atenção necessária, mas pretendo pouco a pouco corrigir os bugs e decisões questionáveis.
-
 ## Configuração do Projeto
 
 Para configurar este projeto em seu ambiente local, siga estas etapas:
