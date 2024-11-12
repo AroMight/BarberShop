@@ -2,7 +2,6 @@
   <img src="https://github.com/wsvincent/awesome-django/raw/main/assets/django-logo-negative.svg" />
 </p>
 
-Este repositório é um projeto pessoal de um site (futuramente um app) de uma barbearia.
 
 ## Configuração do Projeto
 
